@@ -1,0 +1,1225 @@
+# Penjelasan Website LPK Cahaya Tanu Sudrajat
+
+## 1. Gambaran Umum Website
+
+Website **LPK Cahaya Tanu Sudrajat (LPK CTS)** merupakan website **company profile dan sistem informasi** untuk sebuah lembaga pelatihan kerja yang berfokus pada **persiapan karier dan studi ke Jepang**, khususnya melalui program SSW (Tokutei Ginou), magang, kursus bahasa Jepang, serta program caregiver (Kaigo).
+
+Website ini **bukan website sekolah formal**, melainkan website **lembaga pelatihan kerja profesional** yang dirancang untuk:
+
+* Menyampaikan informasi resmi lembaga
+* Mempromosikan program pelatihan
+* Menampilkan dokumentasi kegiatan dan alumni
+* Menyediakan artikel edukatif seputar karier ke Jepang
+* Menjadi media komunikasi antara calon peserta dan pihak LPK
+
+Website dibangun menggunakan **Laravel (backend)** dan **HTML, CSS, JavaScript (frontend)** dengan konsep **CMS (Content Management System)** sehingga seluruh konten dapat dikelola oleh admin.
+
+---
+
+## 2. Tujuan Pembuatan Website
+
+Tujuan utama website ini adalah:
+
+1. Menjadi identitas digital resmi LPK Cahaya Tanu Sudrajat
+2. Memberikan informasi yang jelas, terstruktur, dan terpercaya
+3. Memudahkan calon peserta memahami alur program kerja ke Jepang
+4. Menampilkan kredibilitas lembaga melalui galeri, artikel, dan profil
+5. Menjadi sistem manajemen konten yang fleksibel dan mudah dikembangkan
+
+Website ini dibuat menyerupai **website perusahaan / lembaga profesional**, bukan website pembelajaran internal sekolah.
+
+---
+
+## 3. Struktur Halaman Website
+
+### a. Halaman Home
+
+Halaman utama berisi:
+
+* Header (logo, navigasi, kontak)
+* Slider / banner utama
+* Informasi singkat tentang LPK
+* Daftar program unggulan
+* Keunggulan lembaga
+* Ajakan bergabung (Call to Action)
+* Galeri singkat
+* Footer informasi
+
+Fungsi halaman ini adalah memberikan **kesan pertama yang profesional** dan menarik bagi pengunjung.
+
+---
+
+### b. Halaman Tentang Kami
+
+Berisi:
+
+* Profil lengkap LPK Cahaya Tanu Sudrajat
+* Visi lembaga dalam mencetak SDM siap kerja
+* Pengalaman dan legalitas lembaga
+* Keunggulan (trainer profesional, kurikulum, jaminan)
+
+Halaman ini berfungsi untuk **membangun kepercayaan (trust)**.
+
+---
+
+### c. Halaman Program Kami
+
+Menampilkan daftar program pelatihan, seperti:
+
+* Program SSW (Tokutei Ginou)
+* Program Reguler
+* Persiapan Magang
+* Kursus Bahasa Jepang
+* Program Beasiswa Caregiver (Kaigo)
+
+Setiap program memiliki:
+
+* Deskripsi
+* Manfaat
+* Alur program
+* Persyaratan
+
+Data program diambil dari **database**, sehingga dapat diubah melalui admin.
+
+---
+
+### d. Halaman Detail Program (Contoh: Caregiver)
+
+Halaman ini berisi informasi detail satu program tertentu, meliputi:
+
+* Penjelasan program
+* Program highlights
+* Persyaratan peserta
+* Alur belajar hingga bekerja di Jepang
+
+Halaman ini bersifat **dinamis** berdasarkan data database.
+
+---
+
+### e. Halaman Galeri
+
+Menampilkan dokumentasi:
+
+* Kegiatan pelatihan
+* Aktivitas kelas
+* Alumni
+
+Galeri disusun berdasarkan **album (galleries)** dan **foto (photos)**, sehingga rapi dan terstruktur.
+
+---
+
+### f. Halaman Blog & Artikel
+
+Berisi artikel edukatif seperti:
+
+* Tips interview kerja ke Jepang
+* Perbedaan SSW dan magang
+* Budaya kerja Jepang
+* Kisah sukses alumni
+
+Artikel ditulis oleh admin dan dikelompokkan berdasarkan kategori.
+
+---
+
+### g. Halaman Kontak
+
+Berisi:
+
+* Alamat lembaga
+* Nomor telepon & WhatsApp
+* Email
+* Form kirim pesan
+
+Pesan yang dikirim pengunjung akan tersimpan di database untuk dikelola admin.
+
+---
+
+## 4. Struktur Database dan Model
+
+Website ini menggunakan beberapa tabel utama:
+
+### a. Users
+
+Digunakan untuk akun admin yang mengelola website.
+
+### b. Posts & Categories
+
+Digunakan untuk sistem blog/artikel dengan relasi kategori dan penulis.
+
+### c. Programs
+
+Menyimpan data program pelatihan, termasuk manfaat dan alur program dalam format JSON.
+
+### d. Galleries & Photos
+
+Digunakan untuk galeri foto dengan sistem album agar data lebih rapi dan efisien.
+
+### e. Contact Submissions
+
+Menyimpan pesan dari pengunjung website melalui halaman kontak.
+
+Struktur database ini dirancang agar:
+
+* Mudah dikembangkan
+* Aman
+* Fleksibel untuk kebutuhan konten jangka panjang
+
+---
+
+## 5. Teknologi yang Digunakan
+
+* **Backend:** Laravel
+* **Frontend:** HTML, CSS, JavaScript
+* **Database:** MySQL
+* **Arsitektur:** MVC (Model View Controller)
+* **Keamanan:** Auth Laravel, CSRF Protection
+
+Website ini **bukan template statis**, melainkan website dinamis berbasis database.
+
+---
+
+## 6. Perbedaan dengan Website Sekolah
+
+Perbedaan utama website ini dengan website sekolah adalah:
+
+* Fokus pada **promosi lembaga dan layanan**, bukan akademik
+* Tidak memiliki fitur nilai, kelas, atau siswa
+* Mengutamakan branding, kepercayaan, dan informasi publik
+* Bersifat **company profile + CMS**
+
+Website ini lebih mendekati **website perusahaan, LPK, atau startup edukasi**.
+
+---
+
+## 7. Kesimpulan
+
+Website LPK Cahaya Tanu Sudrajat merupakan website profesional berbasis Laravel yang dirancang untuk mendukung aktivitas promosi, informasi, dan komunikasi lembaga pelatihan kerja. Website ini memiliki struktur yang rapi, database terorganisir, dan sistem manajemen konten yang fleksibel sehingga dapat digunakan dalam jangka panjang dan dikembangkan sesuai kebutuhan.
+
+Website ini dibuat sebagai **proyek mandiri non-sekolah** dan mencerminkan kemampuan pengembang dalam membangun sistem web skala nyata.
+
+---
+
+## 8. Struktur Folder Project Website
+
+Berikut adalah struktur folder yang direkomendasikan untuk website **LPK Cahaya Tanu Sudrajat** menggunakan **Laravel + asset HTML, CSS, dan JavaScript**.
+
+### 8.1 Struktur Root Project
+
+```
+lpk-cts/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin/
+│   │   │   │   ├── DashboardController.php
+│   │   │   │   ├── PostController.php
+│   │   │   │   ├── ProgramController.php
+│   │   │   │   ├── GalleryController.php
+│   │   │   │   └── ContactController.php
+│   │   │   └── Frontend/
+│   │   │       ├── HomeController.php
+│   │   │       ├── AboutController.php
+│   │   │       ├── ProgramController.php
+│   │   │       ├── BlogController.php
+│   │   │       ├── GalleryController.php
+│   │   │       └── ContactController.php
+│   │   └── Middleware/
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Post.php
+│   │   ├── Category.php
+│   │   ├── Program.php
+│   │   ├── Gallery.php
+│   │   ├── Photo.php
+│   │   └── ContactSubmission.php
+│   └── Providers/
+│
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+│
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── main.css
+│   │   ├── js/
+│   │   │   └── main.js
+│   │   └── images/
+│   │       ├── logo/
+│   │       ├── banners/
+│   │       ├── programs/
+│   │       └── gallery/
+│   └── index.php
+│
+├── resources/
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   ├── app.blade.php
+│   │   │   └── admin.blade.php
+│   │   ├── partials/
+│   │   │   ├── navbar.blade.php
+│   │   │   ├── footer.blade.php
+│   │   │   └── sidebar.blade.php
+│   │   ├── frontend/
+│   │   │   ├── home.blade.php
+│   │   │   ├── about.blade.php
+│   │   │   ├── programs/
+│   │   │   │   ├── index.blade.php
+│   │   │   │   └── show.blade.php
+│   │   │   ├── blog/
+│   │   │   │   ├── index.blade.php
+│   │   │   │   └── show.blade.php
+│   │   │   ├── gallery.blade.php
+│   │   │   └── contact.blade.php
+│   │   └── admin/
+│   │       ├── dashboard.blade.php
+│   │       ├── posts/
+│   │       ├── programs/
+│   │       ├── galleries/
+│   │       └── contacts/
+│   └── lang/
+│
+├── routes/
+│   ├── web.php
+│   └── admin.php
+│
+├── storage/
+│   ├── app/
+│   │   └── public/
+│   │       ├── programs/
+│   │       ├── posts/
+│   │       └── galleries/
+│   └── logs/
+│
+├── tests/
+├── .env
+├── composer.json
+└── artisan
+```
+
+---
+
+### 8.2 Penjelasan Singkat Struktur
+
+* **app/Http/Controllers/Admin** → controller khusus admin (CMS)
+* **app/Http/Controllers/Frontend** → controller halaman publik
+* **public/assets** → file CSS, JS, dan gambar statis
+* **resources/views** → blade template frontend & admin
+* **storage/app/public** → file upload dari admin (gambar, galeri)
+* **routes/admin.php** → routing khusus admin panel
+
+Struktur ini dibuat agar kode **rapi, scalable, dan mudah dikembangkan** di masa depan.
+
+
+
+
+
+LPK CTS
+Bandung
++62 813-2116-1615
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Slide 1Slide 2
+Selamat Datang di
+www.lpkcahayatanusudrajat.com
+
+PROGRAM KAMI
+✓
+Program Pelatihan Kerja
+✓
+Program Studi Reguler
+✓
+Persiapan Magang
+Card 1Card 2Card 3
+Profile LPK
+Profil LPK
+Cahaya Tanu Sudrajat
+LPK Cahaya Tanu Sudrajat merupakan lembaga pelatihan kerja yang berkomitmen mencetak sumber daya manusia unggul dan siap bersaing, baik di dalam maupun luar negeri. Dengan tenaga pengajar berpengalaman dan kurikulum yang terstruktur, kami membantu peserta didik mencapai impian karier melalui pembelajaran yang aplikatif.
+
+10+
+LPK Cahaya Tanu Sudrajat
+Membangun Generasi Siap Kerja
+Tahun Pengalaman
+KONSULTASI
+✓
+Lembaga Resmi
+✓
+Jaminan Garansi
+✓
+Trainer Profesional
+Lembaga pelatihan bahasa jepang
+Whatsapp/Telp: 0899-9999-9999
+
+Program Pelatihan Unggulan
+Persiapan SSW (Tokutei Ginoi) dengan kurikulum terbaik
+
+Program 1
+Persiapan SSW (Tokutei Ginoi)
+Persiapan komprehensif untuk ujian Tokutei Ginoi dengan materi terupdate.
+
+Program 2
+Persiapan SSW (Tokutei Ginoi)
+Program intensif bahasa dan skill teknis untuk kebutuhan industri Jepang.
+
+Program 3
+Persiapan SSW (Tokutei Ginoi)
+Program intensif bahasa dan skill teknis untuk kebutuhan industri Jepang.
+
+Program 4
+Persiapan SSW (Tokutei Ginoi)
+Program intensif bahasa dan skill teknis untuk kebutuhan industri Jepang.
+
+Wujudkan
+Mimpi Kalian Untuk Berkarir di Jepang
+Bersama LPK Cahaya Tanu Sudrajat
+Mentor Profesional
+Lembaga Resmi
+Kurikulum Lengkap
+Pasti Berangkat
+Bersetifikat
+Pendampingan Penuh
+Dream Career
+LPK Cahaya
+Tanu Sudrajat
+Wujudkan impian Anda merintis karir di Jepang
+
+dengan langkah pasti dan masa depan yang cerah
+
+Galeri Alumni
+Menjadi lembaga kerja profesional yang mencetak tenaga kerja terampil
+
+Foto Lanskap 1
+Foto Lanskap 2
+Foto Lanskap 3
+Foto Lanskap 4
+Foto Lanskap 5
+Foto Lanskap 6
+Foto Lanskap 7
+Foto Lanskap 8
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Caringin No.113, Babakan Ciparay, Kec. Babakan Ciparay, Kota Bandung, Jawa Barat 40223
++62 813-2116-1615
+cahayatanusudrajat@gmail.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+LPK CTS
+Bandung
++62 823-2323-2323
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Home / Tentang Kami
+LPK Cahaya Tanu Sudrajat Trusted Partner For Study & Career In Japan
+ Kontak Kami
+Profil LPK
+Profil LPK
+Cahaya Tanu Sudrajat
+LPK Cahaya Tanu Sudrajat merupakan lembaga pelatihan kerja yang berkomitmen mencetak sumber daya manusia unggul dan siap bersaing, baik di dalam maupun luar negeri. Dengan tenaga pengajar berpengalaman dan kurikulum yang terstruktur, kami membantu peserta didik mencapai impian karier melalui pembelajaran yang aplikatif.
+
+10+
+LPK Cahaya Tanu Sudrajat
+Membangun Generasi Siap Kerja
+Tahun Pengalaman
+KONSULTASI
+✓
+Lembaga Resmi
+✓
+Jaminan Garansi
+✓
+Trainer Profesional
+Lembaga pelatihan bahasa jepang
+Whatsapp/Telp: 0899-9999-9999
+
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Contoh No. 123
+Bandung, Jawa Barat
++62 823-2323-2323
+info@lpkcahayatanu.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+
+LPK CTS
+Bandung
++62 823-2323-2323
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Home / Program Kami / Caregiver
+LPK Cahaya Tanu Sudrajat Trusted Partner For Study & Career In Japan
+ Kontak Kami
+Program Beasiswa Caregiver (Kaigo)
+Program Beasiswa Caregiver (Kaigo) adalah salah satu program unggulan LPK Cahaya Tanu Sudrajat yang membuka kesempatan bagi peserta untuk meniti karier di bidang perawatan lansia (caregiving) di Jepang melalui jalur resmi dan terstruktur.
+
+Program ini memberikan beasiswa pelatihan bahasa Jepang, budaya kerja, serta keterampilan caregiving bagi peserta berprestasi yang berminat bekerja di sektor kesehatan dan kemanusiaan.
+
+Program ini memberikan beasiswa bahasa jepang, budaya kerja, serta pendidikan caregiver setara D3 (SENMON GAKKOU)
+
+Program Highlights
+Pelatihan Bahasa Jepang Intensif (Level N5–N3)
+Pelatihan Keterampilan Caregiving sesuai standar Jepang
+Pemahaman Budaya & Etika Kerja Jepang di sektor kesehatan
+Pendampingan ujian sertifikasi dan proses seleksi kerja ke Jepang
+Bimbingan administrasi hingga keberangkatan ke Jepang
+Selain mendapatkan ilmu dan pengalaman berharga, peserta juga berkesempatan memperoleh pekerjaan bergengsi di Jepang dengan penghasilan stabil dan lingkungan kerja profesional.
+
+Persyaratan Kaigo
+Lulusan SLTA Sederajat, D3/S1
+Laki-laki / perempuan berusia 18 - 30 tahun
+Memiliki kemampuan B. Jepang minimal JLPT N3
+Sehat Jasmani dan Rohani
+Program Image
+Alur Program
+Belajar Bahasa di Nihongo Gakkou Selama 1 Tahun
+
+Belajar Senmon Gakkou Kaigo (D3 Caregiver) Selama 2 Tahun
+
+Lulus Ujian Nasional Keperawatan (Kaigofukushishi)
+
+Memperoleh Status Residance
+
+Bekerja Diperusahaan Pemberi Beasiswa Selama 5 Tahun
+
+ Kontak Kami
+ Daftar Program
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Contoh No. 123
+Bandung, Jawa Barat
++62 823-2323-2323
+info@lpkcahayatanu.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+
+LPK CTS
+Bandung
++62 823-2323-2323
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Home / Galeri
+LPK Cahaya Tanu Sudrajat Trusted Partner For Study & Career In Japan
+ Kontak Kami
+Galeri Alumni
+Menjadi lembaga kerja profesional yang mencetak tenaga kerja terampil
+
+Foto Potret 1
+Foto Potret 2
+Foto Potret 3
+Foto Potret 4
+Foto Potret 5
+Foto Potret 6
+Foto Potret 7
+Foto Potret 8
+Foto Potret 9
+Foto Potret 10
+Foto Potret 11
+Foto Potret 12
+Foto Potret 13
+Foto Potret 14
+Foto Potret 15
+Foto Lanskap 1
+Foto Lanskap 2
+Foto Lanskap 3
+Foto Lanskap 4
+Foto Lanskap 5
+Foto Lanskap 6
+Foto Lanskap 7
+Foto Lanskap 8
+Foto Lanskap 9
+Foto Lanskap 10
+Foto Lanskap 11
+Foto Lanskap 12
+Foto Lanskap 13
+Foto Lanskap 14
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Contoh No. 123
+Bandung, Jawa Barat
++62 823-2323-2323
+info@lpkcahayatanu.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+
+LPK CTS
+Bandung
++62 823-2323-2323
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Home / Blog
+LPK Cahaya Tanu Sudrajat Trusted Partner For Study & Career In Japan
+ Kontak Kami
+Blog & Artikel
+Dapatkan informasi terbaru seputar pelatihan, karir di Jepang, dan tips sukses dari kami.
+
+Gambar Artikel 1
+Admin
+15 Mei 2024
+5 Tips Sukses Lolos Interview Kerja ke Jepang
+Mempersiapkan diri untuk interview kerja ke Jepang membutuhkan persiapan khusus. Simak 5 tips sukses dari kami untuk membantu Anda mendapatkan pekerjaan impian.
+
+Baca Selengkapnya
+Gambar Artikel 2
+Tim LPK
+2 Mei 2024
+Perbedaan SSW dan Program Magang Jepang
+Banyak yang masih bingung antara program SSW (Specified Skilled Worker) dan program magang reguler. Artikel ini akan menjelaskan perbedaan dan mana yang lebih cocok untuk Anda.
+
+Baca Selengkapnya
+Gambar Artikel 3
+Admin
+20 April 2024
+Pentingnya Menguasai Bahasa Jepang Level N3
+Menguasai bahasa Jepang setidaknya hingga level N3 adalah kunci penting untuk kesuksesan karir Anda di Jepang. Pelajari alasannya dan cara efektif untuk mencapainya.
+
+Baca Selengkapnya
+Gambar Artikel 4
+Tim LPK
+10 April 2024
+Kisah Sukses Alumni: Dari Bandung ke Tokyo
+Bergabunglah dengan perjalanan inspiratif salah satu alumni kami yang berhasil meraih kesuksesan bekerja di bidang perawatan lansia di Tokyo.
+
+Baca Selengkapnya
+Gambar Artikel 5
+Admin
+1 April 2024
+Biaya Hidup dan Gaji di Jepang untuk Pemula
+Ingin tahu estimasi biaya hidup dan standar gaji di Jepang? Kami telah merangkum informasi penting ini untuk membantu persiapan keberangkatan Anda.
+
+Baca Selengkapnya
+Gambar Artikel 6
+Tim LPK
+25 Maret 2024
+Budaya Kerja di Jepang yang Harus Anda Tahu
+Bekerja di Jepang berarti harus beradaptasi dengan budaya kerja yang unik. Pelajari etika dan norma yang berlaku di lingkungan kerja Jepang agar Anda dapat sukses.
+
+Baca Selengkapnya
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Contoh No. 123
+Bandung, Jawa Barat
++62 823-2323-2323
+info@lpkcahayatanu.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+LPK CTS
+Bandung
++62 823-2323-2323
+Follow Us
+LPK Logo
+Home
+Tentang Kami
+Program Kami
+Galeri
+Blog
+Kontak
+Home / Kontak
+LPK Cahaya Tanu Sudrajat Trusted Partner For Study & Career In Japan
+ Kontak Kami
+Hubungi Kami
+Alamat
+Jl. Contoh No. 123
+Bandung, Jawa Barat
+
+Telepon
++62 823-2323-2323
+
+Email
+info@lpkcahayatanu.com
+
+WhatsApp
++62 823-2323-2323
+
+
+Kirim Pesan
+Nama Lengkap
+Email
+Nomor Telepon
+Subjek
+Pesan
+Kirim Pesan
+LPK Logo
+LPK Cahaya Tanu Sudrajat adalah lembaga pelatihan kerja terpercaya untuk persiapan karir di Jepang.
+
+Program
+SSW (Tokutei Ginoi)
+Program Reguler
+Persiapan Magang
+Kursus Bahasa Jepang
+Perusahaan
+Tentang Kami
+Tim Kami
+Blog & Artikel
+Karir
+Hubungi Kami
+Jl. Contoh No. 123
+Bandung, Jawa Barat
++62 823-2323-2323
+info@lpkcahayatanu.com
+© 2024 LPK Cahaya Tanu Sudrajat. Semua hak dilindungi. | Trusted Partner For Study & Career In Japan
+
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
+
+        Schema::create('sessions', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->string('ip_address', 45)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->longText('payload');
+            $table->integer('last_activity')->index();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('sessions');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique(); // Penting untuk URL
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('categories');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+
+            // Relasi: Foreign Key ke Kategori dan User Admin
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('author_id')->constrained('users')->onDelete('cascade'); // Penulis postingan
+
+            // Kolom Konten
+            $table->string('title')->unique();
+            $table->string('slug')->unique();
+            $table->text('excerpt')->nullable(); // Ringkasan singkat
+            $table->longText('content'); // Konten utama
+
+            // Kolom Gambar dan Status
+            $table->string('featured_image')->nullable(); // Path untuk gambar unggulan
+            $table->enum('status', ['draft', 'published'])->default('draft');
+            $table->timestamp('published_at')->nullable(); // Untuk jadwal terbit
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('posts');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('programs', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->string('featured_image')->nullable(); // Gambar Program
+            $table->longText('description')->nullable(); // Konten Utama (Paragraf)
+            $table->json('benefits')->nullable(); // Poin-Poin Manfaat (JSON)
+            $table->json('flow')->nullable(); // Alur Program (JSON)
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('programs');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('galleries', function (Blueprint $table) {
+            $table->id();
+            $table->string('title')->unique(); // Judul Album Galeri (misal: "Kegiatan Kelas Bahasa")
+            $table->string('slug')->unique();
+            $table->json('photos')->nullable(); // Menyimpan array nama file foto sebagai JSON
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('galleries');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('photos', function (Blueprint $table) {
+            $table->id();
+            // Relasi ke Album Galeri
+            $table->foreignId('gallery_id')->constrained()->onDelete('cascade');
+            $table->string('path'); // Path file foto
+            $table->string('caption')->nullable();
+            $table->integer('sort')->nullable(); // Opsional: Judul/Keterangan Foto
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('photos');
+    }
+};
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('contact_submissions', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->text('message');
+            $table->boolean('is_read')->default(false); // Untuk menandai pesan sudah dibaca oleh Admin
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('contact_submissions');
+    }
+};
+
+
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+}
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+class Program extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'featured_image',
+        'description',
+        'benefits',
+        'flow',
+    ];
+
+    // Konversi field JSON menjadi array PHP
+    protected $casts = [
+        'benefits' => 'array',
+        'flow' => 'array',
+    ];
+}
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    use HasFactory;
+    
+    // --- TAMBAHKAN INI ---
+    protected $fillable = [
+        'category_id', 
+        'author_id', 
+        'title', 
+        'slug', 
+        'excerpt', 
+        'content', 
+        'featured_image', 
+        'status', 
+        'published_at'
+    ];
+    // ---------------------
+
+    // Relasi ke Kategori
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Relasi ke Penulis (User Admin)
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+}
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Photo extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'gallery_id',
+        'path',
+        'caption',
+        'sort',
+    ];
+
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
+    }
+}
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Gallery extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'slug',
+        // 'photos', // Kolom baru
+    ];
+
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+}
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class ContactSubmission extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'message',
+        'is_read', // Penting untuk status pelacakan
+    ];
+}
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    use HasFactory;
+    
+    // --- TAMBAHKAN INI ---
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+    // ---------------------
+
+    // Jika Anda ingin mendefinisikan relasi dengan Post (opsional saat ini, tapi bagus untuk masa depan)
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+}
