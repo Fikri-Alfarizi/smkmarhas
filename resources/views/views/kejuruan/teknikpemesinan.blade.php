@@ -467,36 +467,31 @@
     <div class="mesin-wrapper">
         <div class="mesin-container">
 
-
-                                           <div class="row-custom">
+            <div class="row-custom">
                 <div class="col-left">
                     <!-- HERO IMAGE SLIDER -->
                     <div class="hero-slider">
                         <div class="hero-slides">
                             <div class="hero-slide active">
-
-                                                               <img src="{{ asset('image/lab-mesin-1.jpg') }}" alt="Lab Pemesinan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <img src="{{ asset('image/lab-mesin-1.jpg') }}" alt="Lab Pemesinan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="slide-placeholder" style="display:none;">
                                     <span>1510 x 796 px</span>
                                 </div>
                             </div>
                             <div class="hero-slide">
-
-                                                               <img src="{{ asset('image/lab-mesin-2.jpg') }}" alt="Mesin Bubut" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <img src="{{ asset('image/lab-mesin-2.jpg') }}" alt="Mesin Bubut" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="slide-placeholder" style="display:none;">
                                     <span>1510 x 796 px</span>
                                 </div>
                             </div>
                             <div class="hero-slide">
-
-                                                               <img src="{{ asset('image/lab-mesin-3.jpg') }}" alt="Mesin CNC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <img src="{{ asset('image/lab-mesin-3.jpg') }}" alt="Mesin CNC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="slide-placeholder" style="display:none;">
                                     <span>1510 x 796 px</span>
                                 </div>
                             </div>
                             <div class="hero-slide">
-
-                                                               <img src="{{ asset('image/lab-mesin-4.jpg') }}" alt="Praktikum Frais" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <img src="{{ asset('image/lab-mesin-4.jpg') }}" alt="Praktikum Frais" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="slide-placeholder" style="display:none;">
                                     <span>1510 x 796 px</span>
                                 </div>
@@ -511,8 +506,7 @@
                         <button class="slider-btn slider-prev"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn slider-next"><i class="fas fa-chevron-right"></i></button>
                         <div class="slider-dots"></div>
-
-                                               </div>
+                    </div>
                 </div>
 
                 <div class="col-right">
@@ -523,14 +517,8 @@
                         <div class="kaprog-name">Nama Kaprog, S.T.</div>
                         <div class="kaprog-title">Ketua Program Teknik Pemesinan</div>
                     </div>
-
-
-
-                                   </div>
+                </div>
             </div>
-
-
-
 
             <div class="row-custom">
                 <div class="col-left">
@@ -585,8 +573,7 @@
 
                         <!-- KUNJUNGAN INDUSTRI -->
                         <li class="menu-item-wrapper">
-
-                                     <div class="menu-item">
+                            <div class="menu-item">
                                 <span class="menu-text">KUNJUNGAN INDUSTRI</span>
                                 <span class="menu-icon"><i class="fas fa-plus"></i></span>
                             </div>
@@ -619,39 +606,25 @@
                                 </div>
                             </div>
                         </li>
-                    </u
-               l        >
+                    </ul>
                 </div>
             </div>
 
             <!-- NEW SECTION: INFORMASI LENGKAP -->
             <div class="row-custom" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px;">
-
-
-
-                                       <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
+                <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
                     <h3 style="font-size: 24px; color: #1f2937; margin-bottom: 20px; border-left: 5px solid var(--primary-color); padding-left: 15px;">
                         Informasi Lengkap Teknik Pemesinan
                     </h3>
-
-
-
-                         <div class="content-text">
+                    <div class="content-text">
                         <p style="margin-bottom: 15px;">
                             Teknik Pemesinan adalah salah satu kompetensi keahlian yang paling mendasar dan vital dalam dunia industri manufaktur. Di SMK MARHAS, jurusan ini tidak hanya mengajarkan cara mengoperasikan mesin, tetapi juga menanamkan pola pikir presisi, disiplin, dan keselamatan kerja (K3) yang menjadi standar industri global.
                         </p>
-
-
-
-
-                                                        <p style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 15px;">
                             <strong>Fasilitas Unggulan:</strong><br>
                             Kami memiliki bengkel pemesinan yang luas dan lengkap, terdiri dari mesin bubut konvensional, mesin frais, mesin gerinda, hingga mesin CNC (Computer Numerical Control) terbaru. Siswa juga dibekali dengan laboratorium komputer untuk desain CAD (Computer Aided Design) dan simulasi CAM (Computer Aided Manufacturing) sebelum melakukan eksekusi pada mesin nyata.
                         </p>
-
-
-
-                                               <p style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 15px;">
                             <strong>Metode Pembelajaran:</strong><br>
                             Pembelajaran dilakukan dengan sistem blok (Teori dan Praktik) dengan porsi praktik yang lebih dominan (70:30). Kami menerapkan model <em>Project Based Learning</em> (PjBL) di mana siswa mengerjakan proyek-proyek nyata, mulai dari pembuatan komponen sederhana, sparepart mesin, hingga perakitan alat tepat guna. Hal ini bertujuan untuk melatih soft skills seperti pemecahan masalah (<em>problem solving</em>) dan kerjasama tim.
                         </p>
@@ -659,53 +632,47 @@
                             <strong>Sertifikasi Kompetensi:</strong><br>
                             Setiap lulusan Teknik Pemesinan SMK MARHAS akan mengikuti uji kompetensi keahlian yang bekerja sama dengan Lembaga Sertifikasi Profesi (LSP) P1 maupun P2. Sertifikat ini diakui secara nasional oleh Badan Nasional Sertifikasi Profesi (BNSP), menjadi nilai tambah yang signifikan saat melamar kerja di industri.
                         </p>
-                    </d
-                i       v>
+                    </div>
                 </div>
             </div>
 
             <!-- SECTION: GALERI KEGIATAN -->
             <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
-
-                               <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
+                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
                         Galeri Kegiatan Teknik Pemesinan
                     </h3>
 
                     <div class="galeri-grid">
                         <div class="galeri-item">
-                            <img src="{{ asset('image/gallery-mesin-1.jpg') }}" alt="Praktikum Bubu
-     t                          " onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="{{ asset('image/gallery-mesin-1.jpg') }}" alt="Praktikum Mesin Bubut" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="galeri-placeholder" style="display:none;">
                                 <span>786 x 588 px</span>
                             </div>
                             <span class="galeri-label">Praktikum Mesin Bubut</span>
                         </div>
                         <div class="galeri-item">
-                            <img src="{{ asset('image/gallery-mesin-2.jpg') }}" alt="Praktikum CNC" oner
-              r                 or="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="{{ asset('image/gallery-mesin-2.jpg') }}" alt="Praktikum CNC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="galeri-placeholder" style="display:none;">
                                 <span>786 x 588 px</span>
                             </div>
                             <span class="galeri-label">Praktikum CNC</span>
                         </div>
                         <div class="galeri-item">
-                            <img src="{{ asset('image/gallery-mesin-3.jpg') }}" alt="Kunjungan 
-                        I       ndustri" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="{{ asset('image/gallery-mesin-3.jpg') }}" alt="Kunjungan Industri" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="galeri-placeholder" style="display:none;">
                                 <span>786 x 588 px</span>
                             </div>
                             <span class="galeri-label">Kunjungan Industri</span>
                         </div>
                         <div class="galeri-item">
-                            <img src="{{ asset('image/gallery-mesin-4.jpg') }}" alt="Lomba LKS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="{{ asset('image/gallery-mesin-4.jpg') }}" alt="Kompetisi LKS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="galeri-placeholder" style="display:none;">
                                 <span>786 x 588 px</span>
                             </div>
                             <span class="galeri-label">Kompetisi LKS</span>
                         </div>
-                    </d
-              i         v>
+                    </div>
                 </div>
             </div>
 
@@ -759,59 +726,49 @@
                                 <p>Pengajar dari praktisi industri</p>
                             </div>
                         </div>
-                    </d
-            i           v>
+                    </div>
                 </div>
             </div>
 
             <!-- SECTION: INSTAGRAM FEED -->
-
-                               <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
+            <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
                     <h3 style="font-size: 20px; color: #333; margin-bottom: 15px; border-left: 4px solid #E1306C; padding-left: 12px;">
-                        <i class="fab fa-instagram" style="color: #E1306C; margin-right: 8
-         p                      x;"></i>
+                        <i class="fab fa-instagram" style="color: #E1306C; margin-right: 8px;"></i>
                         Instagram Teknik Pemesinan SMK MARHAS
                     </h3>
-                    <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Ikuti ke
-                  g             iatan terbaru jurusan Teknik Pemesinan di Instagram kami</p>
+                    <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Ikuti kegiatan terbaru jurusan Teknik Pemesinan di Instagram kami</p>
 
                     <div class="ig-grid">
-                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class
-                            =   "ig-item">
+                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
                             <img src="{{ asset('image/ig-mesin-1.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e5e5e5%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
-                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class
-                  =             "ig-item">
+                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
                             <img src="{{ asset('image/ig-mesin-2.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23d4d4d4%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
-                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class
-        =                       "ig-item">
+                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
                             <img src="{{ asset('image/ig-mesin-3.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23c5c5c5%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
-                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class
-                  =             "ig-item">
+                        <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
                             <img src="{{ asset('image/ig-mesin-4.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23b8b8b8%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
                         <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
                             <img src="{{ asset('image/ig-mesin-5.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23ababab%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
                         <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="ig-item">
-                            <img src="{{ asset('image/ig-mesin-6.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%239e9e9e%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
+                            <img src="{{ asset('image/ig-mesin-6.jpg') }}" alt="Instagram" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23999999%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E';">
                         </a>
                     </div>
-
-                    <div style="text-align: center; margin-top: 20px;">
+                     <div style="margin-top: 15px; text-align: center;">
                         <a href="https://instagram.com/tp.smkmarhas" target="_blank" class="btn-ig-follow">
                             <i class="fab fa-instagram"></i> Follow @tp.smkmarhas
                         </a>
-                    </d
-        i               v>
+                    </div>
                 </div>
             </div>
 
-            <!-- SECTION: AGENDA KEGIATAN -->
-            <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
+            <!-- SECTION: AGENDA KEGIATAN TABLE -->
+            <div class="row-custom" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px; margin-bottom: 20px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
                     <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
                         Agenda Kegiatan Teknik Pemesinan
@@ -820,29 +777,29 @@
                     <table class="agenda-table">
                         <thead>
                             <tr>
-                                <th>Tanggal</th>
-                                <th>Kegiatan</th>
-                                <th>Lokasi</th>
+                                <th style="width: 20%;">Tanggal</th>
+                                <th style="width: 50%;">Kegiatan</th>
+                                <th style="width: 30%;">Lokasi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>20 Jan 2026</strong></td>
+                                <td>20 Jan 2026</td>
                                 <td>Kunjungan Industri ke PT. Pindad</td>
                                 <td>Bandung</td>
                             </tr>
                             <tr>
-                                <td><strong>05 Feb 2026</strong></td>
+                                <td>05 Feb 2026</td>
                                 <td>Workshop CNC Programming</td>
                                 <td>Bengkel Pemesinan</td>
                             </tr>
                             <tr>
-                                <td><strong>15 Feb 2026</strong></td>
+                                <td>15 Feb 2026</td>
                                 <td>LKS CNC Turning - Tingkat Provinsi</td>
                                 <td>BPPTIK Bandung</td>
                             </tr>
                             <tr>
-                                <td><strong>25 Mar 2026</strong></td>
+                                <td>25 Mar 2026</td>
                                 <td>Pameran Produk Pemesinan 2026</td>
                                 <td>Aula SMK MARHAS</td>
                             </tr>
@@ -855,7 +812,7 @@
     </div>
 @endsection
 
- @push('scripts')
+@push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.menu-item');
