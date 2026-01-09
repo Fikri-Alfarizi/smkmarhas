@@ -1,9 +1,9 @@
 <style>
     /* --- HERO & BREADCRUMB STYLES --- */
-    .hero-wrapper { 
-        position: relative; 
+    .hero-wrapper {
+        position: relative;
     }
-    
+
     .hero-bg {
         background: url('{{ asset("image/hero-bg.jpg") }}') no-repeat center center;
         background-size: cover;
@@ -41,21 +41,22 @@
         gap: 20px;
     }
 
-    .breadcrumb-item { 
-        display: flex; 
-        align-items: center; 
-        gap: 8px; /* Adjusted gap */
-        font-weight: 500; 
-        color: #3c3c3c; 
-        font-size: 14px; 
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        /* Adjusted gap */
+        font-weight: 500;
+        color: #3c3c3c;
+        font-size: 14px;
     }
-    
-    .breadcrumb-dot { 
-        width: 10px; 
-        height: 10px; 
-        border-radius: 50%; 
-        background: var(--primary-color); 
-        flex-shrink: 0; 
+
+    .breadcrumb-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        flex-shrink: 0;
         margin-right: 4px;
     }
 
@@ -69,12 +70,12 @@
         color: var(--primary-color);
         text-decoration: underline;
     }
-    
-    .breadcrumb-title { 
-        font-size: 16px; 
-        font-weight: 600; 
-        color: #3c3c3c; 
-        flex: 1; 
+
+    .breadcrumb-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #3c3c3c;
+        flex: 1;
     }
 
     .breadcrumb-title .highlight {
@@ -125,7 +126,8 @@
         color: #3c3c3c;
         font-size: 14px;
         margin-bottom: 10px;
-        flex-wrap: wrap; /* Allow wrapping on small screens */
+        flex-wrap: wrap;
+        /* Allow wrapping on small screens */
     }
 
     .mobile-breadcrumb-dot {
@@ -174,12 +176,16 @@
 
     /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
-        .hero-wrapper, .hero-bg, .breadcrumb { 
-            display: none; 
+
+        .hero-wrapper,
+        .hero-bg,
+        .breadcrumb {
+            display: none;
         }
-        
-        .mobile-hero, .mobile-breadcrumb { 
-            display: block; 
+
+        .mobile-hero,
+        .mobile-breadcrumb {
+            display: block;
         }
     }
 </style>
@@ -208,7 +214,9 @@
         @endforeach
     </div>
     <div class="breadcrumb-title">
-        {!! $heading !!}
+        {{-- SECURITY: $heading contains trusted HTML from controller (e.g., <span class="highlight">).
+            NEVER pass user input directly to this variable. --}}
+            {!! $heading !!}
     </div>
     <a href="{{ route('bkk.registrasi') }}" class="breadcrumb-btn" style="text-decoration:none">
         Daftar SPMB
@@ -229,6 +237,7 @@
         @endforeach
     </div>
     <div class="mobile-breadcrumb-title">
+        {{-- SECURITY: See note above about $heading --}}
         {!! $heading !!}
     </div>
     <a href="{{ route('bkk.registrasi') }}" class="mobile-breadcrumb-btn" style="text-decoration:none">
