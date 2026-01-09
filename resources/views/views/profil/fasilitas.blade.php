@@ -23,21 +23,73 @@
     }
 
     .feature-image {
-        flex: 1;
-        height: 350px;
+        /* flex: 1; Too big (50% width) */
+        width: 380px; /* Fixed width to match typical text height */
+        flex-shrink: 0;
+        aspect-ratio: 1 / 1; /* Make it square */
         background: #f4f4f4;
-        border-radius: 30px;
+        border-radius: 35px; /* iPhone-like squircle radius */
         overflow: hidden;
         /* box-shadow: 0 20px 40px rgba(0,0,0,0.1); */
+        position: relative; /* For carousel positioning */
+    }
+
+    /* Mini Carousel Styles */
+    .mini-carousel-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .mini-carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .mini-carousel-slide.active {
+        opacity: 1;
+        z-index: 1;
     }
 
-    .feature-image i {
+    .mini-carousel-slide i {
         font-size: 80px;
         color: var(--primary-color);
         opacity: 0.3;
+    }
+
+    .mini-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 2;
+    }
+
+    .mini-indicator {
+        width: 8px;
+        height: 8px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .mini-indicator.active {
+        background: var(--primary-color);
+        width: 24px;
+        border-radius: 12px;
     }
 
     .feature-content {
@@ -93,68 +145,51 @@
         color: var(--primary-color);
     }
 
-    /* Mobile Responsive - Specific Layouts */
+    /* Mobile Responsive - Stacked Layout */
     @media (max-width: 900px) {
         .fasilitas-detail-section { padding: 40px 20px; }
         
-        /* Lab Komputer (1st item) - Image Left, Text Right */
-        .feature-item:nth-child(1) {
-            flex-direction: row;
-            gap: 20px;
-        }
-        .feature-item:nth-child(1) .feature-image {
-            width: 45%;
-            height: 200px;
-        }
-        .feature-item:nth-child(1) .feature-content {
-            width: 55%;
-            text-align: left;
-        }
-        .feature-item:nth-child(1) .feature-content h2::after {
-            left: 0;
-        }
-        .feature-item:nth-child(1) .spec-list li {
-            flex-direction: row;
-        }
-        
-        /* Bengkel (2nd item) - Image Right, Text Left */
-        .feature-item:nth-child(2) {
-            flex-direction: row-reverse;
-            gap: 20px;
-        }
-        .feature-item:nth-child(2) .feature-image {
-            width: 45%;
-            height: 200px;
-        }
-        .feature-item:nth-child(2) .feature-content {
-            width: 55%;
-            text-align: left;
-        }
-        .feature-item:nth-child(2) .feature-content h2::after {
-            left: 0;
-        }
-        .feature-item:nth-child(2) .spec-list li {
-            flex-direction: row;
-        }
-        
-        /* Ruang Kelas (3rd item) - Image Left, Text Right */
+        /* Reset all layouts to column (Image Top, Text Bottom) */
+        .feature-item, 
+        .feature-item:nth-child(even),
+        .feature-item:nth-child(1),
+        .feature-item:nth-child(2),
         .feature-item:nth-child(3) {
-            flex-direction: row;
-            gap: 20px;
+            flex-direction: column !important;
+            gap: 25px;
+            margin-bottom: 60px;
         }
+
+        /* Image full width */
+        .feature-image,
+        .feature-item:nth-child(1) .feature-image,
+        .feature-item:nth-child(2) .feature-image,
         .feature-item:nth-child(3) .feature-image {
-            width: 45%;
-            height: 200px;
+            width: 100%;
+            height: 250px;
         }
-        .feature-item:nth-child(3) .feature-content {
-            width: 55%;
-            text-align: left;
+
+        /* Content full width and aligned left */
+        .feature-content,
+        .feature-item:nth-child(1) .feature-content,
+        .feature-item:nth-child(2) .feature-content,
+        .feature-item:nth-child(3) .feature-content,
+        .feature-item:nth-child(even) .feature-content {
+            width: 100%;
+            text-align: left !important;
         }
-        .feature-item:nth-child(3) .feature-content h2::after {
-            left: 0;
+
+        /* Underline always on left */
+        .feature-content h2::after,
+        .feature-item:nth-child(even) .feature-content h2::after {
+            left: 0 !important;
+            right: auto !important;
         }
-        .feature-item:nth-child(3) .spec-list li {
-            flex-direction: row;
+
+        /* List items always row regular */
+        .spec-list li,
+        .feature-item:nth-child(even) .spec-list li {
+            flex-direction: row !important;
         }
     }
 
@@ -450,8 +485,16 @@
 <section class="fasilitas-detail-section">
     <div class="feature-item fade-in">
         <div class="feature-image">
-            <i class="fas fa-microchip"></i>
-            {{-- <img src="{{ asset('image/fasilitas/lab-komputer.jpg') }}" style="width:100%; height:100%; object-fit:cover;"> --}}
+            <div class="mini-carousel-container" id="carousel-lab">
+                 <div class="mini-carousel-slide active" style="background: #f0fdf4;"><i class="fas fa-microchip"></i></div>
+                 <div class="mini-carousel-slide" style="background: #dcfce7;"><i class="fas fa-laptop-code"></i></div>
+                 <div class="mini-carousel-slide" style="background: #bbf7d0;"><i class="fas fa-server"></i></div>
+                 <div class="mini-indicators">
+                     <div class="mini-indicator active" onclick="setMiniSlide('carousel-lab', 0)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-lab', 1)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-lab', 2)"></div>
+                 </div>
+            </div>
         </div>
         <div class="feature-content">
             <span class="text-primary" style="font-weight: 700; font-size: 14px;">PUSAT TEKNOLOGI</span>
@@ -468,7 +511,16 @@
 
     <div class="feature-item fade-in">
         <div class="feature-image">
-            <i class="fas fa-industry"></i>
+            <div class="mini-carousel-container" id="carousel-bengkel">
+                 <div class="mini-carousel-slide active" style="background: #fff7ed;"><i class="fas fa-industry"></i></div>
+                 <div class="mini-carousel-slide" style="background: #ffedd5;"><i class="fas fa-cogs"></i></div>
+                 <div class="mini-carousel-slide" style="background: #fed7aa;"><i class="fas fa-tools"></i></div>
+                 <div class="mini-indicators">
+                     <div class="mini-indicator active" onclick="setMiniSlide('carousel-bengkel', 0)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-bengkel', 1)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-bengkel', 2)"></div>
+                 </div>
+            </div>
         </div>
         <div class="feature-content">
             <span class="text-primary" style="font-weight: 700; font-size: 14px;">TEACHING FACTORY</span>
@@ -485,7 +537,16 @@
 
     <div class="feature-item fade-in">
         <div class="feature-image">
-            <i class="fas fa-chalkboard-teacher"></i>
+            <div class="mini-carousel-container" id="carousel-kelas">
+                 <div class="mini-carousel-slide active" style="background: #eff6ff;"><i class="fas fa-chalkboard-teacher"></i></div>
+                 <div class="mini-carousel-slide" style="background: #dbeafe;"><i class="fas fa-project-diagram"></i></div>
+                 <div class="mini-carousel-slide" style="background: #bfdbfe;"><i class="fas fa-users"></i></div>
+                 <div class="mini-indicators">
+                     <div class="mini-indicator active" onclick="setMiniSlide('carousel-kelas', 0)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-kelas', 1)"></div>
+                     <div class="mini-indicator" onclick="setMiniSlide('carousel-kelas', 2)"></div>
+                 </div>
+            </div>
         </div>
         <div class="feature-content">
             <span class="text-primary" style="font-weight: 700; font-size: 14px;">COMFORT LEARNING</span>
@@ -821,5 +882,53 @@
             }
         });
     });
+
+    // --- Mini Carousel Logic ---
+    function setMiniSlide(carouselId, index) {
+        const container = document.getElementById(carouselId);
+        if (!container) return;
+
+        const slides = container.querySelectorAll('.mini-carousel-slide');
+        const indicators = container.querySelectorAll('.mini-indicator');
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === index);
+        });
+    }
+
+    // Auto Slide for Mini Carousels
+    function initAutoSlide() {
+        const carousels = ['carousel-lab', 'carousel-bengkel', 'carousel-kelas'];
+        
+        carousels.forEach(id => {
+            let currentIndex = 0;
+            const container = document.getElementById(id);
+            if (!container) return;
+            
+            const slideCount = container.querySelectorAll('.mini-carousel-slide').length;
+            
+            // Random offset start to prevent all sliding at exact same time
+            setTimeout(() => {
+                setInterval(() => {
+                    // Find current active index
+                    const slides = container.querySelectorAll('.mini-carousel-slide');
+                    let activeIndex = 0;
+                    slides.forEach((slide, i) => {
+                        if (slide.classList.contains('active')) activeIndex = i;
+                    });
+                    
+                    const nextIndex = (activeIndex + 1) % slideCount;
+                    setMiniSlide(id, nextIndex);
+                }, 4000); // 4 seconds interval
+            }, Math.random() * 2000);
+        });
+    }
+    
+    // Start auto slide
+    window.addEventListener('load', initAutoSlide);
 </script>
 @endpush

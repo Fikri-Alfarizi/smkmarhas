@@ -486,13 +486,18 @@
       background: var(--primary-color);
       width: 400px;
       height: 350px;
-      border-radius: 44px;
+      border-radius: 0;
+      /* No radius - square box */
       flex-shrink: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 80px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5;
     }
 
     .profile-info {
@@ -802,41 +807,51 @@
     .dream-image-placeholder {
       flex: 1;
       height: 400px;
-      border-radius: 20px;
+      border-radius: 0;
+      /* No radius - square box */
       position: relative;
       overflow: hidden;
       /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
       /* Mengganti background gambar dengan warna hijau polos */
       background: var(--primary-color);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 80px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5;
     }
 
     /* --- GALLERY (FIXED) --- */
     .gallery-section {
-      text-align: left; /* Aligned left for header */
+      text-align: left;
+      /* Aligned left for header */
       padding-bottom: 100px;
     }
 
     .gallery-layout-row {
-        display: grid;
-        grid-template-columns: 1.2fr 1.2fr; /* Balanced width to fit embed */
-        gap: 40px;
-        align-items: start;
-        margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr;
+      /* Balanced width to fit embed */
+      gap: 40px;
+      align-items: start;
+      margin-top: 40px;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+      grid-template-columns: repeat(3, 1fr);
+      /* 3 Columns */
       gap: 15px;
     }
 
     .gallery-item {
-      height: 150px; /* Smaller height */
+      aspect-ratio: 1 / 1;
+      /* Perfect square */
+      width: 100%;
       /* Mengganti background gambar dengan warna hijau polos */
       background: var(--green-lightest);
       border-radius: 12px;
@@ -863,53 +878,85 @@
       z-index: 2;
       /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
     }
-    
+
     .instagram-feed-container {
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 16px;
-        overflow: hidden;
-        height: 100%;
-        min-height: 480px; /* Match approximate height of 2 rows of gallery + gap */
-        display: flex;
-        flex-direction: column;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 480px;
+      /* Match approximate height of 2 rows of gallery + gap */
+      display: flex;
+      flex-direction: column;
     }
-    
+
     .instagram-header {
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);;
-        padding: 15px;
-        color: white;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      ;
+      padding: 15px;
+      color: white;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
     }
-    
+
     .instagram-embed-placeholder {
-        flex: 1;
-        background: #fafafa;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        text-align: center;
-        color: #888;
+      flex: 1;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      color: #888;
     }
 
     @media (max-width: 900px) {
-        .gallery-layout-row {
-            grid-template-columns: 1fr; /* Stack on mobile */
-        }
-        .gallery-grid {
-            grid-template-columns: repeat(3, 1fr); /* Keep 3 cols or switch to 2? 3 is barely usable on very small screens, maybe 2. */
-        }
+      .gallery-layout-row {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Keep 3 cols or switch to 2? 3 is barely usable on very small screens, maybe 2. */
+      }
     }
+
     @media (max-width: 600px) {
-        .gallery-grid {
-            grid-template-columns: repeat(2, 1fr); /* 2 cols on mobile */
-        }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols on mobile */
+      }
+    }
+
+    /* --- TIKTOK WIDGET --- */
+    .tiktok-feed-container {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      /* Spacing between widgets */
+    }
+
+    .tiktok-header {
+      background: #000000;
+      padding: 15px;
+      color: white;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
     }
 
     /* --- FOOTER --- */
@@ -1289,6 +1336,80 @@
       font-weight: 600;
     }
 
+    /* Mobile Hero Slider */
+    .mobile-hero-slider {
+      display: none;
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--primary-color);
+      margin-bottom: 0;
+    }
+
+    .mobile-hero-slider .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .mobile-hero-slider .slide.active {
+      opacity: 1;
+    }
+
+    .mobile-hero-slider .hero-text-mobile {
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .mobile-hero-slider .hero-text-mobile h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-hero-slider .hero-text-mobile p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Mobile Stats Row */
+    .mobile-stats-row {
+      display: none;
+      justify-content: space-around;
+      padding: 20px;
+      background: white;
+      margin: 0 20px 20px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+    }
+
+    .mobile-stat-item {
+      text-align: center;
+    }
+
+    .mobile-stat-item .stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .mobile-stat-item .stat-label {
+      font-size: 12px;
+      color: #666;
+      font-weight: 600;
+    }
+
     /* Mobile Welcome */
     .mobile-welcome {
       display: none;
@@ -1451,16 +1572,21 @@
     .mobile-profile-image {
       margin-top: 20px;
       width: 100%;
-      border-radius: 14px;
+      border-radius: 0;
+      /* No radius - square box */
       overflow: hidden;
       /* Mengganti background gambar dengan warna hijau polos */
       background: var(--primary-color);
       height: 200px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 60px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5;
     }
 
     .mobile-profile-image img {
@@ -1476,7 +1602,8 @@
       background: #f0fdf4;
       border-radius: 20px;
       padding: 20px;
-      margin-bottom: 30px;
+      margin: 0 20px 30px;
+      /* Added horizontal margin */
       border: 1px solid #dcfce7;
     }
 
@@ -1695,12 +1822,17 @@
       /* Mengganti background gambar dengan warna hijau polos */
       background: var(--primary-color);
       height: 180px;
-      border-radius: 14px;
+      border-radius: 0;
+      /* No radius - square box */
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 60px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5;
     }
 
     .mobile-dream-image img {
@@ -1987,6 +2119,14 @@
         display: flex;
       }
 
+      .mobile-hero-slider {
+        display: block;
+      }
+
+      .mobile-stats-row {
+        display: flex;
+      }
+
       .mobile-welcome {
         display: block;
       }
@@ -2135,501 +2275,491 @@
       .mobile-menu-toggle {
         display: block;
       }
-    }SMK MARHAS MARGAHAYU
-Kab. Bandung, Jawa Barat
- adm.smkmarhas@gmail.com
-Ikuti Kami:
-Logo SMK MARHAS
-Beranda
-Profil 
-Kejuruan 
-Akademik 
-Berita
-Galeri
-BKK 
-SPMB
-Kontak
-Kurikulum Pembelajaran
-Penerapan Kurikulum Merdeka yang berpusat pada peserta didik dan terkoneksi dengan dunia industri.
+    }
 
-Prinsip Pembelajaran
-Kurikulum Merdeka
-Pembelajaran intrakurikuler yang beragam di mana konten akan lebih optimal agar peserta didik memiliki cukup waktu untuk mendalami konsep.
-Link & Match
-Penyelarasan kurikulum sekolah dengan kebutuhan IDUKA (Industri, Dunia Usaha, dan Dunia Kerja).
-Teaching Factory
-Model pembelajaran berbasis produk (barang/jasa) melalui sinergi sekolah dengan industri.
-Struktur Kurikulum
-KELOMPOK MATA PELAJARAN	RINCIAN MATERI / MUATAN
-A. Muatan Nasional
-Wajib ditempuh seluruh jurusan
-Pendidikan Agama dan Budi Pekerti
-Pendidikan Pancasila dan Kewarganegaraan
-Bahasa Indonesia
-Matematika
-Sejarah Indonesia
-Bahasa Inggris
-B. Muatan Kewilayahan
-Muatan Lokal Jawa Barat
-Seni Budaya
-Pendidikan Jasmani, Olahraga, dan Kesehatan
-Bahasa Sunda
-C. Muatan Kejuruan
-Sesuai Konsentrasi Keahlian
-Dasar Program Keahlian: Fisika, Kimia, Gambar Teknik (Tergantung Jurusan)
-Konsentrasi Keahlian:
-• Teknik Pemesinan (Bubut, Frais, CNC)
-• PPLG (Coding, Database, Web)
-Produk Kreatif dan Kewirausahaan
-Praktik Kerja Lapangan (PKL)
-Dokumen Akademik
-Struktur Kurikulum Lengkap
-Dokumen detail pembagian jam pelajaran per semester tahun ajaran 2025/2026.
-
-Unduh PDF
-Panduan Akademik & Tata Tertib
-Buku saku siswa mengenai peraturan akademik dan tata tertib sekolah.
-
-Unduh PDF
-22 Dec 2025UAS
-Ujian Akhir Semester (UAS) Tahun Ajaran 2025/2026
-Kampus SMK MARHAS
-08 Dec 2025Wisuda
-Wisuda & Pelepasan Siswa Kelas XII Angkatan 2025
-Hotel Sutan Raja
-31 May 2025PPDB
-Penerimaan Peserta Didik Baru (PPDB) Gelombang 1
-Sekretariat PPDB
-15 Jan 2026Kunjungan
-Kunjungan Industri Jurusan PPLG ke Gameloft Indonesia
-Yogyakarta
-20 Jan 2026Lomba
-Turnamen Futsal Antar Pelajar Se-Bandung Raya
-GOR Saparua Bandung
-25 Jan 2026Workshop
-Workshop "Digital Marketing" untuk Kelas XI Bisnis Daring
-Lab Komputer 1
-22 Dec 2025UAS
-Ujian Akhir Semester (UAS) Tahun Ajaran 2025/2026
-Kampus SMK MARHAS
-08 Dec 2025Wisuda
-Wisuda & Pelepasan Siswa Kelas XII Angkatan 2025
-Hotel Sutan Raja
-31 May 2025PPDB
-Penerimaan Peserta Didik Baru (PPDB) Gelombang 1
-Sekretariat PPDB
-15 Jan 2026Kunjungan
-Kunjungan Industri Jurusan PPLG ke Gameloft Indonesia
-Yogyakarta
-20 Jan 2026Lomba
-Turnamen Futsal Antar Pelajar Se-Bandung Raya
-GOR Saparua Bandung
-25 Jan 2026Workshop
-Workshop "Digital Marketing" untuk Kelas XI Bisnis Daring
-Lab Komputer 1
-Logo Sekolah
-SMK MARHAS
-Sekolah Menengah Kejuruan Pusat Keunggulan yang mencetak lulusan kompeten, berakhlak mulia, dan berdaya saing global.
-
-Jurusan
-Teknik Pemesinan
-Rekayasa Perangkat Lunak
-Informasi
-Profil Sekolah
-Info SPMB
-Kontak Kami
-Hubungi Kami
-Jl. Terusan Kopo No.385/299, Margahayu, Kab. Bandung
-(022) 5410926
-adm.smkmarhas@gmail.com
-© 2025 SMK MARHAS Margahayu. All Rights Reserved.
-
-
+    SMK MARHAS MARGAHAYU Kab. Bandung,
+    Jawa Barat adm.smkmarhas@gmail.com Ikuti Kami: Logo SMK MARHAS Beranda Profil Kejuruan Akademik Berita Galeri BKK SPMB Kontak Kurikulum Pembelajaran Penerapan Kurikulum Merdeka yang berpusat pada peserta didik dan terkoneksi dengan dunia industri. Prinsip Pembelajaran Kurikulum Merdeka Pembelajaran intrakurikuler yang beragam di mana konten akan lebih optimal agar peserta didik memiliki cukup waktu untuk mendalami konsep. Link & Match Penyelarasan kurikulum sekolah dengan kebutuhan IDUKA (Industri, Dunia Usaha, dan Dunia Kerja). Teaching Factory Model pembelajaran berbasis produk (barang/jasa) melalui sinergi sekolah dengan industri. Struktur Kurikulum KELOMPOK MATA PELAJARAN RINCIAN MATERI / MUATAN A. Muatan Nasional Wajib ditempuh seluruh jurusan Pendidikan Agama dan Budi Pekerti Pendidikan Pancasila dan Kewarganegaraan Bahasa Indonesia Matematika Sejarah Indonesia Bahasa Inggris B. Muatan Kewilayahan Muatan Lokal Jawa Barat Seni Budaya Pendidikan Jasmani, Olahraga, dan Kesehatan Bahasa Sunda C. Muatan Kejuruan Sesuai Konsentrasi Keahlian Dasar Program Keahlian: Fisika, Kimia, Gambar Teknik (Tergantung Jurusan) Konsentrasi Keahlian: • Teknik Pemesinan (Bubut, Frais, CNC) • PPLG (Coding, Database, Web) Produk Kreatif dan Kewirausahaan Praktik Kerja Lapangan (PKL) Dokumen Akademik Struktur Kurikulum Lengkap Dokumen detail pembagian jam pelajaran per semester tahun ajaran 2025/2026. Unduh PDF Panduan Akademik & Tata Tertib Buku saku siswa mengenai peraturan akademik dan tata tertib sekolah. Unduh PDF 22 Dec 2025UAS Ujian Akhir Semester (UAS) Tahun Ajaran 2025/2026 Kampus SMK MARHAS 08 Dec 2025Wisuda Wisuda & Pelepasan Siswa Kelas XII Angkatan 2025 Hotel Sutan Raja 31 May 2025PPDB Penerimaan Peserta Didik Baru (PPDB) Gelombang 1 Sekretariat PPDB 15 Jan 2026Kunjungan Kunjungan Industri Jurusan PPLG ke Gameloft Indonesia Yogyakarta 20 Jan 2026Lomba Turnamen Futsal Antar Pelajar Se-Bandung Raya GOR Saparua Bandung 25 Jan 2026Workshop Workshop "Digital Marketing" untuk Kelas XI Bisnis Daring Lab Komputer 1 22 Dec 2025UAS Ujian Akhir Semester (UAS) Tahun Ajaran 2025/2026 Kampus SMK MARHAS 08 Dec 2025Wisuda Wisuda & Pelepasan Siswa Kelas XII Angkatan 2025 Hotel Sutan Raja 31 May 2025PPDB Penerimaan Peserta Didik Baru (PPDB) Gelombang 1 Sekretariat PPDB 15 Jan 2026Kunjungan Kunjungan Industri Jurusan PPLG ke Gameloft Indonesia Yogyakarta 20 Jan 2026Lomba Turnamen Futsal Antar Pelajar Se-Bandung Raya GOR Saparua Bandung 25 Jan 2026Workshop Workshop "Digital Marketing" untuk Kelas XI Bisnis Daring Lab Komputer 1 Logo Sekolah SMK MARHAS Sekolah Menengah Kejuruan Pusat Keunggulan yang mencetak lulusan kompeten, berakhlak mulia, dan berdaya saing global. Jurusan Teknik Pemesinan Rekayasa Perangkat Lunak Informasi Profil Sekolah Info SPMB Kontak Kami Hubungi Kami Jl. Terusan Kopo No.385/299, Margahayu, Kab. Bandung (022) 5410926 adm.smkmarhas@gmail.com © 2025 SMK MARHAS Margahayu. All Rights Reserved.
   </style>
-    <div class="hero-wrapper">
-      <div class="hero-slider" id="heroSlider">
-        <div class="hero-text-overlay fade-in">
-          <h1 style="font-size: 40px; font-weight: 800; margin-bottom: 10px;">SMK MARHAS<br>MARGAHAYU</h1>
-          <p style="font-size: 18px; font-weight: 500;">Sekolah Pusat Keunggulan, Mencetak Generasi Kompeten dan
-            Berkarakter.</p>
-        </div>
+  <div class="hero-wrapper">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-text-overlay fade-in">
+        <h1 style="font-size: 40px; font-weight: 800; margin-bottom: 10px;">SMK MARHAS<br>MARGAHAYU</h1>
+        <p style="font-size: 18px; font-weight: 500;">Sekolah Pusat Keunggulan, Mencetak Generasi Kompeten dan
+          Berkarakter.</p>
+      </div>
 
-        <div class="slider-container" id="sliderContainer">
-          <div class="slide active">
-            <!-- Gambar slider disembunyikan -->
+      <div class="slider-container" id="sliderContainer">
+        <div class="slide active">
+          <!-- Gambar slider disembunyikan -->
+        </div>
+        <div class="slide">
+          <!-- Gambar slider disembunyikan -->
+        </div>
+      </div>
+      <div class="slider-nav">
+        <div class="slider-dot active" data-slide="0"></div>
+        <div class="slider-dot" data-slide="1"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="welcome-container">
+    <div class="hero-stats-grid">
+      <div class="fade-in fade-in-delay-1">
+        <h2 style="font-size: 24px; margin-bottom: 15px; color: #333;">Kenapa Harus <br><span class="text-primary">SMK
+            MARHAS?</span></h2>
+        <div class="program-list">
+          <div class="program-item-row">
+            <div class="p-dot"><i class="fas fa-check"></i></div>
+            <div class="p-text">Kurikulum Berbasis Industri</div>
           </div>
-          <div class="slide">
-            <!-- Gambar slider disembunyikan -->
+          <div class="program-item-row">
+            <div class="p-dot"><i class="fas fa-check"></i></div>
+            <div class="p-text">Fasilitas Praktik Lengkap</div>
+          </div>
+          <div class="program-item-row">
+            <div class="p-dot"><i class="fas fa-check"></i></div>
+            <div class="p-text">Penyaluran Kerja (BKK)</div>
           </div>
         </div>
-        <div class="slider-nav">
-          <div class="slider-dot active" data-slide="0"></div>
-          <div class="slider-dot" data-slide="1"></div>
+        <a href="#" class="btn-primary" style="margin-top: 20px; width: 100%;">DAFTAR SPMB SEKARANG</a>
+      </div>
+
+      <div class="hero-cards-row fade-in fade-in-delay-2">
+        <div class="card-placeholder">
+          <div class="card-label">Ekstrakurikuler</div>
+        </div>
+        <div class="card-placeholder">
+          <div class="card-label">Prestasi Siswa</div>
+        </div>
+        <div class="card-placeholder">
+          <div class="card-label">Kunjungan Industri</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="welcome-container">
-      <div class="hero-stats-grid">
-        <div class="fade-in fade-in-delay-1">
-          <h2 style="font-size: 24px; margin-bottom: 15px; color: #333;">Kenapa Harus <br><span class="text-primary">SMK
-              MARHAS?</span></h2>
-          <div class="program-list">
-            <div class="program-item-row">
-              <div class="p-dot"><i class="fas fa-check"></i></div>
-              <div class="p-text">Kurikulum Berbasis Industri</div>
-            </div>
-            <div class="program-item-row">
-              <div class="p-dot"><i class="fas fa-check"></i></div>
-              <div class="p-text">Fasilitas Praktik Lengkap</div>
-            </div>
-            <div class="program-item-row">
-              <div class="p-dot"><i class="fas fa-check"></i></div>
-              <div class="p-text">Penyaluran Kerja (BKK)</div>
-            </div>
-          </div>
-          <a href="#" class="btn-primary" style="margin-top: 20px; width: 100%;">DAFTAR SPMB SEKARANG</a>
-        </div>
+  <!-- Mobile Hero Slider -->
+  <div class="mobile-hero-slider">
+    <div class="slide active">
+      <!-- Green background only, no text -->
+    </div>
+  </div>
 
-        <div class="hero-cards-row fade-in fade-in-delay-2">
-          <div class="card-placeholder">
-            <div class="card-label">Ekstrakurikuler</div>
-          </div>
-          <div class="card-placeholder">
-            <div class="card-label">Prestasi Siswa</div>
-          </div>
-          <div class="card-placeholder">
-            <div class="card-label">Kunjungan Industri</div>
-          </div>
-        </div>
+  <!-- Mobile Welcome Section -->
+  <div class="mobile-welcome fade-in">
+    <h1>Selamat Datang di<br>SMK MARHAS</h1>
+    <p>Pusat Keunggulan, Mencetak Generasi Kompeten.</p>
+    <a href="#" class="mobile-program-btn">DAFTAR PPDB SEKARANG</a>
+    <div class="mobile-program-list">
+      <div class="mobile-program-item">
+        <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
+        <div class="mobile-program-text">Kurikulum Industri</div>
+      </div>
+      <div class="mobile-program-item">
+        <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
+        <div class="mobile-program-text">Fasilitas Lengkap</div>
+      </div>
+      <div class="mobile-program-item">
+        <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
+        <div class="mobile-program-text">Siap Kerja</div>
       </div>
     </div>
-
-    <!-- Mobile Welcome Section -->
-    <div class="mobile-welcome fade-in">
-      <div class="mobile-hero-image"
-        style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */">
-        <!-- Gambar hero mobile disembunyikan -->
+    
+    <!-- Mobile Stats Row - Now below welcome -->
+    <div class="mobile-stats-row fade-in" style="display: flex; margin: 20px 0 0 0;">
+      <div class="mobile-stat-item">
+        <div class="stat-number">A</div>
+        <div class="stat-label">Akreditasi<br>BAN-SM</div>
       </div>
-      <h1>Selamat Datang di<br>SMK MARHAS</h1>
-      <p>Pusat Keunggulan, Mencetak Generasi Kompeten.</p>
-      <a href="#" class="mobile-program-btn">DAFTAR PPDB SEKARANG</a>
-      <div class="mobile-program-list">
-        <div class="mobile-program-item">
-          <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
-          <div class="mobile-program-text">Kurikulum Industri</div>
-        </div>
-        <div class="mobile-program-item">
-          <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
-          <div class="mobile-program-text">Fasilitas Lengkap</div>
-        </div>
-        <div class="mobile-program-item">
-          <div class="mobile-program-dot"><i class="fas fa-check"></i></div>
-          <div class="mobile-program-text">Siap Kerja</div>
-        </div>
+      <div class="mobile-stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Jurusan<br>Unggulan</div>
+      </div>
+      <div class="mobile-stat-item">
+        <div class="stat-number">1k+</div>
+        <div class="stat-label">Alumni<br>Terserap Kerja</div>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile Image Gallery -->
-    <div class="mobile-image-gallery fade-in fade-in-delay-1">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <!-- Mobile Image Gallery -->
+  <div class="mobile-image-gallery fade-in fade-in-delay-1">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-    <div class="section-content">
-      <div class="profile-layout">
-        <div class="profile-image-placeholder fade-in">
-          <!-- Gambar profil disembunyikan -->
-        </div>
+  <div class="section-content">
+    <div class="profile-layout">
+      <div class="profile-image-placeholder fade-in">
+        <i class="fas fa-image" style="font-size: 48px; margin-bottom: 10px; opacity: 0.7;"></i>
+        <span>Upload Gambar</span>
+        <span style="opacity: 0.7;">400 x 350 px</span>
+      </div>
 
-        <div class="profile-info">
-          <h2 class="section-title fade-in">
-            <span class="divider-v"></span>
-            <span>Profil <span class="text-primary">Sekolah</span></span>
-          </h2>
-          <p class="profile-desc fade-in fade-in-delay-1">
-            SMK MARHAS Margahayu adalah lembaga pendidikan kejuruan yang berdedikasi tinggi dalam mencetak lulusan yang
-            siap kerja, cerdas, dan berakhlak mulia. Berlokasi strategis di Kabupaten Bandung, kami terus berinovasi
-            dalam metode pembelajaran dan melengkapi fasilitas praktik sesuai standar industri terkini.
-          </p>
+      <div class="profile-info">
+        <h2 class="section-title fade-in">
+          <span class="divider-v"></span>
+          <span>Profil <span class="text-primary">Sekolah</span></span>
+        </h2>
+        <p class="profile-desc fade-in fade-in-delay-1">
+          SMK MARHAS Margahayu adalah lembaga pendidikan kejuruan yang berdedikasi tinggi dalam mencetak lulusan yang
+          siap kerja, cerdas, dan berakhlak mulia. Berlokasi strategis di Kabupaten Bandung, kami terus berinovasi
+          dalam metode pembelajaran dan melengkapi fasilitas praktik sesuai standar industri terkini.
+        </p>
 
-          <div class="stats-row fade-in fade-in-delay-2">
-            <div class="stats-item">
-              <div class="big-number">20+</div>
-              <div class="stats-text">
-                <div>Tahun</div>
-                <div>Pengalaman</div>
-              </div>
-            </div>
-            <div class="stats-item">
-              <div class="big-number">2</div>
-              <div class="stats-text">
-                <div>Jurusan</div>
-                <div>Unggulan</div>
-              </div>
-            </div>
-            <div class="stats-item">
-              <div class="big-number">1k+</div>
-              <div class="stats-text">
-                <div>Alumni</div>
-                <div>Terserap Kerja</div>
-              </div>
+        <div class="stats-row fade-in fade-in-delay-2">
+          <div class="stats-item">
+            <div class="big-number">A</div>
+            <div class="stats-text">
+              <div>Akreditasi</div>
+              <div>BAN-SM</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="benefits-pill fade-in fade-in-delay-3">
-        <div class="contact-info-box">
-          <h3>Penerimaan Siswa Baru</h3>
-          <p>Tahun Ajaran 2025/2026 Telah Dibuka!</p>
-        </div>
-
-        <div class="benefit-list">
-          <div class="b-item">
-            <div class="b-dot"><i class="fas fa-check"></i></div>Terakreditasi "A"
-          </div>
-          <div class="b-item">
-            <div class="b-dot"><i class="fas fa-check"></i></div>Guru Sertifikasi
-          </div>
-          <div class="b-item">
-            <div class="b-dot"><i class="fas fa-check"></i></div>Lingkungan Asri
-          </div>
-        </div>
-
-        <a href="#" class="btn-primary">INFO LENGKAP</a>
-      </div>
-
-      <div class="programs-header fade-in">
-        <h2>Kompetensi Keahlian</h2>
-        <p class="fade-in fade-in-delay-1">Pilih jurusan sesuai minat dan bakatmu untuk masa depan gemilang</p>
-      </div>
-
-      <div class="program-grid">
-        <div class="program-card fade-in fade-in-delay-1">
-          <div class="pc-image-box">
-            <!-- Gambar program card disembunyikan -->
-          </div>
-          <div class="card-content">
-            <h3 class="pc-title">Teknik Pemesinan</h3>
-            <p class="pc-desc">Ahli dalam pengoperasian mesin bubut, CNC, dan manufaktur industri modern.</p>
-            <div class="pc-arrow"><i class="fas fa-arrow-right"></i></div>
-          </div>
-        </div>
-
-        <div class="program-card fade-in fade-in-delay-4">
-          <div class="pc-image-box">
-            <!-- Gambar program card disembunyikan -->
-          </div>
-          <div class="card-content">
-            <h3 class="pc-title">Rekayasa Perangkat Lunak</h3>
-            <p class="pc-desc">Fokus pada pembuatan website, aplikasi mobile, dan coding profesional.</p>
-            <div class="pc-arrow"><i class="fas fa-arrow-right"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="dream-layout">
-        <div class="dream-content">
-          <div class="dream-subtitle fade-in">Visi Kami</div>
-          <h2 class="dream-title fade-in">BMW: Bekerja, Melanjutkan, Wirausaha</h2>
-          <div class="dream-tagline fade-in fade-in-delay-1">Siapkan Masa Depanmu di Sini</div>
-
-          <div class="dream-buttons">
-            <div class="db-row fade-in fade-in-delay-2">
-              <div class="db-item bg-light-green">
-                <div class="db-dot"><i class="fas fa-star"></i></div>Pendidikan Karakter
-              </div>
-              <div class="db-item bg-dark-green">
-                <div class="db-dot"><i class="fas fa-star"></i></div>Siap Kerja
-              </div>
-            </div>
-            <div class="db-row fade-in fade-in-delay-3">
-              <div class="db-item bg-light-green">
-                <div class="db-dot"><i class="fas fa-star"></i></div>Disiplin Tinggi
-              </div>
-              <div class="db-item bg-dark-green">
-                <div class="db-dot"><i class="fas fa-star"></i></div>Kompeten
-              </div>
+          <div class="stats-item">
+            <div class="big-number">2</div>
+            <div class="stats-text">
+              <div>Jurusan</div>
+              <div>Unggulan</div>
             </div>
           </div>
-        </div>
-
-        <div class="dream-image-placeholder fade-in fade-in-delay-2">
-          <!-- Gambar dream placeholder disembunyikan -->
-        </div>
-      </div>
-
-      <div class="gallery-section">
-        <h2 style="font-size: 36px; margin-bottom: 10px; font-weight: 700;" class="fade-in">Galeri Kegiatan</h2>
-        <p style="color: #767676; font-weight: 500; margin-bottom: 20px;" class="fade-in fade-in-delay-1">Dokumentasi aktivitas siswa di
-          lingkungan sekolah dan industri</p>
-
-        <div class="gallery-layout-row">
-            <!-- Left: Gallery Grid (6 Images) -->
-            <div class="gallery-col-left fade-in fade-in-delay-2">
-                 <div class="gallery-grid">
-                  <div class="gallery-item"></div>
-                  <div class="gallery-item"></div>
-                  <div class="gallery-item"></div>
-                  <div class="gallery-item"></div>
-                  <div class="gallery-item"></div>
-                  <div class="gallery-item"></div>
-                </div>
-                <div style="margin-top: 20px; text-align: left;">
-                    <a href="#" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Lihat Seluruh Galeri &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Right: Instagram Embed -->
-            <div class="gallery-col-right fade-in fade-in-delay-3">
-                <div class="instagram-feed-container">
-                    <div class="instagram-header">
-                        <i class="fab fa-instagram" style="font-size: 24px;"></i>
-                        <span>@marhasupdate</span>
-                    </div>
-                    
-                    <!-- 
-                        IMPORTANT: To display a LIVE updating Instagram feed, you must use a widget service 
-                        because Instagram does not allow direct iframes of profiles.
-                        
-                        1. Go to a free widget provider (e.g., SnapWidget.com, Elfsight.com, or Juicer.io).
-                        2. Connect the @marhasupdate account.
-                        3. Generate the "Grid" or "Feed" widget code.
-                        4. Paste the <iframe> or <script> code below, replacing the placeholder.
-                    -->
-                    
-                    <div style="flex: 1; background: white;">
-                        <script src="https://elfsightcdn.com/platform.js" async></script>
-                        <div class="elfsight-app-fb119548-bf6e-4761-bc38-991156fdb61e" data-elfsight-app-lazy></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Profile Section -->
-    <div class="mobile-profile fade-in">
-      <h2 class="mobile-profile-title">Profil SMK MARHAS</h2>
-      <p class="mobile-profile-desc">
-        SMK MARHAS Margahayu adalah lembaga pendidikan kejuruan yang berdedikasi tinggi dalam mencetak lulusan yang siap
-        kerja, cerdas, dan berakhlak mulia.
-      </p>
-
-      <div class="mobile-stats">
-        <div class="mobile-big-number">20+</div>
-        <div class="mobile-stats-text">
-          <div>SMK MARHAS</div>
-          <div>Pusat Keunggulan</div>
-        </div>
-        <div class="mobile-exp-badge">Tahun Pengalaman</div>
-      </div>
-
-      <div class="mobile-profile-image">
-        <!-- Gambar profil mobile disembunyikan -->
-      </div>
-    </div>
-
-    <!-- Mobile Benefits Section -->
-    <div class="mobile-benefits fade-in">
-      <h3 class="mobile-benefits-title">PENERIMAAN SISWA BARU</h3>
-      <div class="mobile-benefit-list">
-        <div class="mobile-benefit-item">
-          <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
-          <div>Terakreditasi "A"</div>
-        </div>
-        <div class="mobile-benefit-item">
-          <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
-          <div>Guru Sertifikasi</div>
-        </div>
-        <div class="mobile-benefit-item">
-          <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
-          <div>Lingkungan Asri</div>
-        </div>
-      </div>
-      <div class="mobile-contact-info">
-        <h3>Tahun Ajaran 2025/2026</h3>
-        <p>Telah Dibuka!</p>
-      </div>
-    </div>
-
-    <!-- Mobile Programs Section -->
-    <div class="mobile-programs fade-in">
-      <div class="mobile-programs-header">
-        <h2>Kompetensi Keahlian</h2>
-        <p>Pilih jurusan sesuai minat dan bakatmu</p>
-      </div>
-      <div class="mobile-program-grid">
-        <div class="mobile-program-card fade-in fade-in-delay-1">
-          <div></div>
-          <div class="mobile-program-card-content">
-            <h3 class="mobile-program-card-title">Teknik Pemesinan</h3>
-            <p class="mobile-program-card-desc">Ahli operasional mesin & manufaktur</p>
-            <div class="mobile-program-card-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="mobile-program-card fade-in fade-in-delay-2">
-          <div></div>
-          <div class="mobile-program-card-content">
-            <h3 class="mobile-program-card-title">RPL</h3>
-            <p class="mobile-program-card-desc">Software Engineering & Coding</p>
-            <div class="mobile-program-card-arrow">
-              <i class="fas fa-arrow-right"></i>
+          <div class="stats-item">
+            <div class="big-number">1k+</div>
+            <div class="stats-text">
+              <div>Alumni</div>
+              <div>Terserap Kerja</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Dream Section - FIXED -->
-    <div class="mobile-dream fade-in">
-      <div class="mobile-dream-content">
-        <div class="mobile-dream-subtitle">Visi Kami</div>
-        <h2 class="mobile-dream-title">BMW: Bekerja, Melanjutkan, Wirausaha</h2>
-        <div class="mobile-dream-tagline">Siapkan Masa Depanmu di Sini</div>
+    <div class="benefits-pill fade-in fade-in-delay-3">
+      <div class="contact-info-box">
+        <h3>Penerimaan Siswa Baru</h3>
+        <p>Tahun Ajaran 2025/2026 Telah Dibuka!</p>
       </div>
-      <div class="mobile-dream-buttons">
-        <div class="mobile-db-item light">
-          <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
-          Pendidikan Karakter
+
+      <div class="benefit-list">
+        <div class="b-item">
+          <div class="b-dot"><i class="fas fa-check"></i></div>Terakreditasi "A"
         </div>
-        <div class="mobile-db-item">
-          <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
-          Siap Kerja
+        <div class="b-item">
+          <div class="b-dot"><i class="fas fa-check"></i></div>Guru Sertifikasi
         </div>
-        <div class="mobile-db-item light">
-          <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
-          Disiplin Tinggi
-        </div>
-        <div class="mobile-db-item">
-          <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
-          Kompeten
+        <div class="b-item">
+          <div class="b-dot"><i class="fas fa-check"></i></div>Lingkungan Asri
         </div>
       </div>
-      <div class="mobile-dream-image fade-in fade-in-delay-1">
-        <!-- Gambar dream mobile disembunyikan -->
+
+      <a href="#" class="btn-primary">INFO LENGKAP</a>
+    </div>
+
+    <div class="programs-header fade-in">
+      <h2>Kompetensi Keahlian</h2>
+      <p class="fade-in fade-in-delay-1">Pilih jurusan sesuai minat dan bakatmu untuk masa depan gemilang</p>
+    </div>
+
+    <div class="program-grid">
+      <div class="program-card fade-in fade-in-delay-1">
+        <div class="pc-image-box">
+          <!-- Gambar program card disembunyikan -->
+        </div>
+        <div class="card-content">
+          <h3 class="pc-title">Teknik Pemesinan</h3>
+          <p class="pc-desc">Ahli dalam pengoperasian mesin bubut, CNC, dan manufaktur industri modern.</p>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
-      <div class="mobile-dream-box">
-        <h3 class="mobile-dream-box-title">SMK MARHAS</h3>
-        <p class="mobile-dream-box-desc">Mencetak Generasi Kompeten dan Berkarakter</p>
+
+      <div class="program-card fade-in fade-in-delay-4">
+        <div class="pc-image-box">
+          <!-- Gambar program card disembunyikan -->
+        </div>
+        <div class="card-content">
+          <h3 class="pc-title">Rekayasa Perangkat Lunak</h3>
+          <p class="pc-desc">Fokus pada pembuatan website, aplikasi mobile, dan coding profesional.</p>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
     </div>
 
-    <!-- Mobile Gallery Section -->
-    <div class="mobile-gallery fade-in">
-      <div class="mobile-gallery-header">
-        <h2>Galeri Kegiatan</h2>
-        <p>Dokumentasi aktivitas siswa</p>
+    <div class="dream-layout">
+      <div class="dream-content">
+        <div class="dream-subtitle fade-in">Visi Kami</div>
+        <h2 class="dream-title fade-in">BMW: Bekerja, Melanjutkan, Wirausaha</h2>
+        <div class="dream-tagline fade-in fade-in-delay-1">Siapkan Masa Depanmu di Sini</div>
+
+        <div class="dream-buttons">
+          <div class="db-row fade-in fade-in-delay-2">
+            <div class="db-item bg-light-green">
+              <div class="db-dot"><i class="fas fa-star"></i></div>Pendidikan Karakter
+            </div>
+            <div class="db-item bg-dark-green">
+              <div class="db-dot"><i class="fas fa-star"></i></div>Siap Kerja
+            </div>
+          </div>
+          <div class="db-row fade-in fade-in-delay-3">
+            <div class="db-item bg-light-green">
+              <div class="db-dot"><i class="fas fa-star"></i></div>Disiplin Tinggi
+            </div>
+            <div class="db-item bg-dark-green">
+              <div class="db-dot"><i class="fas fa-star"></i></div>Kompeten
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mobile-gallery-grid">
-        <div class="mobile-gallery-item fade-in fade-in-delay-1"></div>
-        <div class="mobile-gallery-item fade-in fade-in-delay-2"></div>
-        <div class="mobile-gallery-item fade-in fade-in-delay-3"></div>
-        <div class="mobile-gallery-item fade-in fade-in-delay-4"></div>
+
+      <div class="dream-image-placeholder fade-in fade-in-delay-2">
+        <i class="fas fa-image" style="font-size: 48px; margin-bottom: 10px; opacity: 0.7;"></i>
+        <span>Upload Gambar</span>
+        <span style="opacity: 0.7;">712 × 452 px</span>
       </div>
     </div>
+
+    <div class="gallery-section">
+      <h2 style="font-size: 36px; margin-bottom: 10px; font-weight: 700;" class="fade-in">Galeri Kegiatan</h2>
+      <p style="color: #767676; font-weight: 500; margin-bottom: 20px;" class="fade-in fade-in-delay-1">Dokumentasi
+        aktivitas siswa di
+        lingkungan sekolah dan industri</p>
+
+      <div class="gallery-layout-row">
+        <!-- Left: Gallery Grid (6 Images) -->
+        <div class="gallery-col-left fade-in fade-in-delay-2">
+          <div class="gallery-grid">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+          </div>
+          <div style="margin-top: 20px; text-align: left;">
+            <a href="javascript:void(0);" id="loadMoreGallery" onclick="loadMoreGalleryItems()"
+              style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Lihat Seluruh Galeri
+              &rarr;</a>
+          </div>
+        </div>
+
+        <script>
+          function loadMoreGalleryItems() {
+            const galleryGrid = document.querySelector('.gallery-section .gallery-grid');
+            const socialColumn = document.querySelector('.gallery-col-right');
+            const loadMoreBtn = document.getElementById('loadMoreGallery');
+
+            // Add items until gallery height matches or exceeds social column
+            const addItems = () => {
+              for (let i = 0; i < 12; i++) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item fade-in';
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                galleryGrid.appendChild(item);
+
+                // Animate in
+                setTimeout(() => {
+                  item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateY(0)';
+                }, i * 50);
+              }
+            };
+
+            // Keep adding until heights match
+            const checkHeight = () => {
+              const galleryHeight = galleryGrid.parentElement.offsetHeight;
+              const socialHeight = socialColumn.offsetHeight;
+
+              if (galleryHeight < socialHeight) {
+                addItems();
+                setTimeout(checkHeight, 100);
+              } else {
+                // Hide the button when done
+                loadMoreBtn.innerHTML = 'Galeri Lengkap ✓';
+                loadMoreBtn.style.pointerEvents = 'none';
+                loadMoreBtn.style.color = '#888';
+              }
+            };
+
+            checkHeight();
+          }
+        </script>
+
+        <!-- Right: Instagram & TikTok Stick -->
+        <div class="gallery-col-right fade-in fade-in-delay-3">
+          <div class="instagram-feed-container">
+            <div class="instagram-header">
+              <i class="fab fa-instagram" style="font-size: 24px;"></i>
+              <span>@marhasupdate</span>
+            </div>
+
+            <div style="flex: 1; background: white;">
+              <script src="https://elfsightcdn.com/platform.js" async></script>
+              <div class="elfsight-app-fb119548-bf6e-4761-bc38-991156fdb61e" data-elfsight-app-lazy></div>
+            </div>
+          </div>
+
+          <!-- TikTok Feed -->
+          <div class="tiktok-feed-container">
+            <div class="tiktok-header">
+              <i class="fab fa-tiktok" style="font-size: 24px;"></i>
+              <span>@marhasupdate</span>
+            </div>
+
+            <div style="flex: 1; background: white;">
+              <!-- Elfsight TikTok Feed | Untitled TikTok Feed -->
+              <script src="https://elfsightcdn.com/platform.js" async></script>
+              <div class="elfsight-app-e7b1febe-2c1c-4c20-9619-b3ca0f179095" data-elfsight-app-lazy></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Profile Section -->
+  <div class="mobile-profile fade-in">
+    <h2 class="mobile-profile-title">Profil SMK MARHAS</h2>
+    <p class="mobile-profile-desc">
+      SMK MARHAS Margahayu adalah lembaga pendidikan kejuruan yang berdedikasi tinggi dalam mencetak lulusan yang siap
+      kerja, cerdas, dan berakhlak mulia.
+    </p>
+
+    <div class="mobile-stats">
+      <div class="mobile-big-number">A</div>
+      <div class="mobile-stats-text">
+        <div>Akreditasi</div>
+        <div>BAN-SM</div>
+      </div>
+      <div class="mobile-exp-badge">Terakreditasi</div>
+    </div>
+
+    <div class="mobile-profile-image">
+      <i class="fas fa-image" style="font-size: 36px; margin-bottom: 8px; opacity: 0.7;"></i>
+      <span>Upload Gambar</span>
+      <span style="opacity: 0.7;">374 × 200 px</span>
+    </div>
+  </div>
+
+  <!-- Mobile Benefits Section -->
+  <div class="mobile-benefits fade-in">
+    <h3 class="mobile-benefits-title">PENERIMAAN SISWA BARU</h3>
+    <div class="mobile-benefit-list">
+      <div class="mobile-benefit-item">
+        <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
+        <div>Terakreditasi "A"</div>
+      </div>
+      <div class="mobile-benefit-item">
+        <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
+        <div>Guru Sertifikasi</div>
+      </div>
+      <div class="mobile-benefit-item">
+        <div class="mobile-benefit-dot"><i class="fas fa-check"></i></div>
+        <div>Lingkungan Asri</div>
+      </div>
+    </div>
+    <div class="mobile-contact-info">
+      <h3>Tahun Ajaran 2025/2026</h3>
+      <p>Telah Dibuka!</p>
+    </div>
+  </div>
+
+  <!-- Mobile Programs Section -->
+  <div class="mobile-programs fade-in">
+    <div class="mobile-programs-header">
+      <h2>Kompetensi Keahlian</h2>
+      <p>Pilih jurusan sesuai minat dan bakatmu</p>
+    </div>
+    <div class="mobile-program-grid">
+      <div class="mobile-program-card fade-in fade-in-delay-1">
+        <div></div>
+        <div class="mobile-program-card-content">
+          <h3 class="mobile-program-card-title">Teknik Pemesinan</h3>
+          <p class="mobile-program-card-desc">Ahli operasional mesin & manufaktur</p>
+          <div class="mobile-program-card-arrow">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-program-card fade-in fade-in-delay-2">
+        <div></div>
+        <div class="mobile-program-card-content">
+          <h3 class="mobile-program-card-title">RPL</h3>
+          <p class="mobile-program-card-desc">Software Engineering & Coding</p>
+          <div class="mobile-program-card-arrow">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dream Section - FIXED -->
+  <div class="mobile-dream fade-in">
+    <div class="mobile-dream-content">
+      <div class="mobile-dream-subtitle">Visi Kami</div>
+      <h2 class="mobile-dream-title">BMW: Bekerja, Melanjutkan, Wirausaha</h2>
+      <div class="mobile-dream-tagline">Siapkan Masa Depanmu di Sini</div>
+    </div>
+    <div class="mobile-dream-buttons">
+      <div class="mobile-db-item light">
+        <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
+        Pendidikan Karakter
+      </div>
+      <div class="mobile-db-item">
+        <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
+        Siap Kerja
+      </div>
+      <div class="mobile-db-item light">
+        <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
+        Disiplin Tinggi
+      </div>
+      <div class="mobile-db-item">
+        <div class="mobile-db-dot"><i class="fas fa-star"></i></div>
+        Kompeten
+      </div>
+    </div>
+    <div class="mobile-dream-image fade-in fade-in-delay-1">
+      <i class="fas fa-image" style="font-size: 36px; margin-bottom: 8px; opacity: 0.7;"></i>
+      <span>Upload Gambar</span>
+      <span style="opacity: 0.7;">374 × 180 px</span>
+    </div>
+    <div class="mobile-dream-box">
+      <h3 class="mobile-dream-box-title">SMK MARHAS</h3>
+      <p class="mobile-dream-box-desc">Mencetak Generasi Kompeten dan Berkarakter</p>
+    </div>
+  </div>
+
+  <!-- Mobile Gallery Section -->
+  <div class="mobile-gallery fade-in">
+    <div class="mobile-gallery-header">
+      <h2>Galeri Kegiatan</h2>
+      <p>Dokumentasi aktivitas siswa</p>
+    </div>
+    <div class="mobile-gallery-grid">
+      <div class="mobile-gallery-item fade-in fade-in-delay-1"></div>
+      <div class="mobile-gallery-item fade-in fade-in-delay-2"></div>
+      <div class="mobile-gallery-item fade-in fade-in-delay-3"></div>
+      <div class="mobile-gallery-item fade-in fade-in-delay-4"></div>
+    </div>
+  </div>
 @endsection

@@ -298,23 +298,22 @@
         }
     }
 
-    .ekstra-icon {
-        width: 80px;
-        height: 80px;
-        background: var(--green-lightest);
-        color: var(--primary-color);
+    .ekstra-logo {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
         border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
         margin: 0 auto 20px;
-        font-size: 30px;
-        transition: 0.3s;
+        /* background: var(--green-lightest); */
+        /* padding: 10px; */
     }
 
-    .ekstra-card:hover .ekstra-icon {
-        background: var(--primary-color);
-        color: #fff;
+    .ekstra-card:hover .ekstra-logo {
+        /* No hover effect needed for image typically, or add scale */
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
     }
 
     .ekstra-card h3 {
@@ -401,84 +400,84 @@
     <div class="ekstra-grid">
         <div class="ekstra-card fade-in" data-ekstra="osis">
             <span class="tag-kategori">Organisasi</span>
-            <div class="ekstra-icon"><i class="fas fa-users"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="OSIS">
             <h3>OSIS</h3>
             <p>Pusat organisasi siswa yang mengelola berbagai kegiatan sekolah dan kepemimpinan.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="pramuka">
             <span class="tag-kategori">Wajib / Karakter</span>
-            <div class="ekstra-icon"><i class="fas fa-campground"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Pramuka">
             <h3>Pramuka</h3>
             <p>Membentuk karakter disiplin, kemandirian, dan cinta alam melalui kegiatan kepanduan.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="paskibra">
             <span class="tag-kategori">Karakter</span>
-            <div class="ekstra-icon"><i class="fas fa-flag"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Paskibra">
             <h3>Paskibra</h3>
             <p>Pelatihan baris-berbaris dan penanaman jiwa nasionalisme yang kuat.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="taekwondo">
             <span class="tag-kategori">Olahraga</span>
-            <div class="ekstra-icon"><i class="fas fa-fist-raised"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Taekwondo">
             <h3>Taekwondo</h3>
             <p>Seni bela diri asal Korea untuk melatih fisik, mental, dan pertahanan diri.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="basket">
             <span class="tag-kategori">Olahraga</span>
-            <div class="ekstra-icon"><i class="fas fa-basketball-ball"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Basketball Club">
             <h3>Basketball Club</h3>
             <p>Tim basket SMK MARHAS yang aktif mengikuti kompetisi antar pelajar.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="futsal">
             <span class="tag-kategori">Olahraga</span>
-            <div class="ekstra-icon"><i class="fas fa-running"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Futsal">
             <h3>Futsal Putra/Putri</h3>
             <p>Ekstrakurikuler terfavorit yang fokus pada teknik bola dan kerjasama tim.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="badminton">
             <span class="tag-kategori">Olahraga</span>
-            <div class="ekstra-icon"><i class="fas fa-table-tennis"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Badminton">
             <h3>Badminton</h3>
             <p>Wadah bagi pecinta bulutangkis untuk mengasah teknik smes dan kelincahan.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="pencaksilat">
             <span class="tag-kategori">Bela Diri</span>
-            <div class="ekstra-icon"><i class="fas fa-user-shield"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Pencak Silat">
             <h3>Pencak Silat</h3>
             <p>Melestarikan budaya bangsa melalui seni bela diri tradisional Indonesia.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="voli">
             <span class="tag-kategori">Olahraga</span>
-            <div class="ekstra-icon"><i class="fas fa-volleyball-ball"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Bola Voli">
             <h3>Bola Voli</h3>
             <p>Latihan rutin untuk membangun kekuatan fisik dan strategi permainan voli.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="english">
             <span class="tag-kategori">Akademik</span>
-            <div class="ekstra-icon"><i class="fas fa-language"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="English Club">
             <h3>English Club</h3>
             <p>Mengasah kemampuan berbicara, debat, dan storytelling dalam bahasa Inggris.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="smart">
             <span class="tag-kategori">Sains/Teknologi</span>
-            <div class="ekstra-icon"><i class="fas fa-lightbulb"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="SMART">
             <h3>SMART</h3>
             <p>Wadah kreativitas siswa dalam bidang sains, penelitian, dan inovasi.</p>
         </div>
 
         <div class="ekstra-card fade-in" data-ekstra="mio">
             <span class="tag-kategori">Kesenian</span>
-            <div class="ekstra-icon"><i class="fas fa-music"></i></div>
+            <img src="{{ asset('image/placeholder_logo.png') }}" class="ekstra-logo" alt="Mio">
             <h3>Mio</h3>
             <p>Ekstrakurikuler bidang musik dan kesenian untuk menyalurkan bakat seni siswa.</p>
         </div>
@@ -553,7 +552,7 @@
         'osis': {
             kategori: 'Organisasi',
             nama: 'OSIS',
-            icon: 'fas fa-users',
+            image: 'placeholder_logo.png',
             deskripsi: 'Organisasi Siswa Intra Sekolah (OSIS) adalah wadah utama bagi siswa SMK MARHAS untuk mengembangkan jiwa kepemimpinan, kreativitas, dan tanggung jawab. OSIS mengelola berbagai kegiatan sekolah mulai dari acara akademik, olahraga, hingga kegiatan sosial. Melalui OSIS, siswa belajar berorganisasi, membuat keputusan bersama, dan mengimplementasikan program-program yang bermanfaat bagi seluruh warga sekolah.',
             jadwal: 'Setiap Sabtu, 14:00 - 16:00',
             pembina: 'Bapak/Ibu Pembina OSIS',
@@ -569,7 +568,7 @@
         'pramuka': {
             kategori: 'Wajib / Karakter',
             nama: 'Pramuka',
-            icon: 'fas fa-campground',
+            image: 'placeholder_logo.png',
             deskripsi: 'Pramuka SMK MARHAS merupakan ekstrakurikuler wajib yang bertujuan membentuk karakter siswa melalui kegiatan kepanduan. Siswa dilatih untuk mandiri, disiplin, peduli lingkungan, dan memiliki jiwa petualang. Kegiatan meliputi PBB, pioneering, survival, hiking, dan berbagai permainan edukatif yang mengasah kerjasama tim dan problem solving.',
             jadwal: 'Setiap Jumat, 15:00 - 17:00',
             pembina: 'Kakak Pembina Pramuka',
@@ -584,7 +583,7 @@
         'paskibra': {
             kategori: 'Karakter',
             nama: 'Paskibra',
-            icon: 'fas fa-flag',
+            image: 'placeholder_logo.png',
             deskripsi: 'Pasukan Pengibar Bendera (Paskibra) SMK MARHAS adalah tim elite yang bertugas mengibarkan bendera merah putih pada upacara-upacara penting. Anggota Paskibra dilatih dengan disiplin tinggi dalam hal PBB, tata upacara, dan kedisiplinan. Paskibra juga menjadi representasi sekolah dalam berbagai event dan kompetisi tingkat kabupaten hingga provinsi.',
             jadwal: 'Senin & Kamis, 15:30 - 17:30',
             pembina: 'Pelatih Paskibra',
@@ -599,7 +598,7 @@
         'taekwondo': {
             kategori: 'Olahraga',
             nama: 'Taekwondo',
-            icon: 'fas fa-fist-raised',
+            image: 'placeholder_logo.png',
             deskripsi: 'Taekwondo SMK MARHAS mengajarkan seni bela diri asal Korea yang fokus pada tendangan, pukulan, dan pertahanan diri. Selain melatih fisik, Taekwondo juga membentuk mental, kedisiplinan, dan rasa percaya diri siswa. Tim Taekwondo sekolah rutin mengikuti kejuaraan dan telah meraih berbagai prestasi di tingkat regional.',
             jadwal: 'Selasa & Kamis, 15:00 - 17:00',
             pembina: 'Sabeum Taekwondo',
@@ -614,7 +613,7 @@
         'basket': {
             kategori: 'Olahraga',
             nama: 'Basketball Club',
-            icon: 'fas fa-basketball-ball',
+            image: 'placeholder_logo.png',
             deskripsi: 'Basketball Club SMK MARHAS adalah wadah bagi siswa yang memiliki passion dalam olahraga basket. Latihan rutin meliputi teknik dasar, strategi permainan, dan physical conditioning. Tim basket sekolah aktif mengikuti kompetisi antar pelajar dan telah menjadi salah satu tim unggulan di wilayah Kabupaten Bandung.',
             jadwal: 'Rabu & Sabtu, 15:00 - 17:00',
             pembina: 'Coach Basketball',
@@ -629,7 +628,7 @@
         'futsal': {
             kategori: 'Olahraga',
             nama: 'Futsal Putra/Putri',
-            icon: 'fas fa-running',
+            image: 'placeholder_logo.png',
             deskripsi: 'Futsal adalah ekstrakurikuler paling favorit di SMK MARHAS. Dengan dua tim (putra dan putri), siswa dilatih teknik kontrol bola, passing, shooting, dan strategi permainan futsal. Tim futsal sekolah rutin bertanding dengan sekolah lain dan telah menorehkan berbagai prestasi di kompetisi tingkat kabupaten dan provinsi.',
             jadwal: 'Senin & Jumat, 15:30 - 17:30',
             pembina: 'Pelatih Futsal',
@@ -644,7 +643,7 @@
         'badminton': {
             kategori: 'Olahraga',
             nama: 'Badminton',
-            icon: 'fas fa-table-tennis',
+            image: 'placeholder_logo.png',
             deskripsi: 'Ekstrakurikuler Badminton SMK MARHAS melatih siswa dalam teknik dasar bulutangkis seperti servis, smash, dropshot, dan footwork. Dengan fasilitas lapangan indoor yang memadai, siswa dapat berlatih dengan nyaman. Tim badminton sekolah juga aktif mengikuti turnamen dan telah mengharumkan nama sekolah di berbagai kejuaraan.',
             jadwal: 'Selasa & Kamis, 15:00 - 17:00',
             pembina: 'Pelatih Badminton',
@@ -658,7 +657,7 @@
         'pencaksilat': {
             kategori: 'Bela Diri',
             nama: 'Pencak Silat',
-            icon: 'fas fa-user-shield',
+            image: 'placeholder_logo.png',
             deskripsi: 'Pencak Silat adalah seni bela diri tradisional Indonesia yang dilestarikan di SMK MARHAS. Siswa dilatih jurus-jurus pencak silat, teknik pertahanan diri, dan nilai-nilai budaya Indonesia. Ekstrakurikuler ini tidak hanya melatih fisik, tetapi juga mental dan spiritual siswa. Tim Pencak Silat sekolah rutin mengikuti kejuaraan dan menjadi kebanggaan sekolah.',
             jadwal: 'Rabu & Sabtu, 15:00 - 17:00',
             pembina: 'Pelatih Pencak Silat',
@@ -673,7 +672,7 @@
         'voli': {
             kategori: 'Olahraga',
             nama: 'Bola Voli',
-            icon: 'fas fa-volleyball-ball',
+            image: 'placeholder_logo.png',
             deskripsi: 'Ekstrakurikuler Bola Voli SMK MARHAS melatih siswa dalam teknik passing, smash, blocking, dan strategi permainan voli. Dengan latihan rutin dan pembinaan yang baik, tim voli sekolah telah menjadi salah satu tim yang diperhitungkan di kompetisi antar pelajar. Kegiatan ini juga melatih kerjasama tim dan sportivitas.',
             jadwal: 'Senin & Kamis, 15:30 - 17:30',
             pembina: 'Pelatih Voli',
@@ -687,7 +686,7 @@
         'english': {
             kategori: 'Akademik',
             nama: 'English Club',
-            icon: 'fas fa-language',
+            image: 'placeholder_logo.png',
             deskripsi: 'English Club SMK MARHAS adalah wadah bagi siswa untuk mengasah kemampuan berbahasa Inggris melalui berbagai kegiatan menarik seperti conversation, debate, storytelling, dan drama. Siswa dilatih untuk percaya diri berbicara dalam bahasa Inggris dan mempersiapkan diri untuk kompetisi speech dan debate tingkat regional maupun nasional.',
             jadwal: 'Rabu, 15:00 - 17:00',
             pembina: 'Guru Bahasa Inggris',
@@ -702,7 +701,7 @@
         'smart': {
             kategori: 'Sains/Teknologi',
             nama: 'SMART',
-            icon: 'fas fa-lightbulb',
+            image: 'placeholder_logo.png',
             deskripsi: 'SMART (Science, Math, and Research Team) adalah ekstrakurikuler yang fokus pada pengembangan kreativitas dan inovasi siswa di bidang sains dan teknologi. Siswa dilatih untuk melakukan penelitian, membuat karya ilmiah, dan mengikuti kompetisi sains tingkat nasional. SMART juga menjadi wadah bagi siswa yang ingin mengembangkan project berbasis teknologi.',
             jadwal: 'Kamis, 15:00 - 17:00',
             pembina: 'Guru Sains & Teknologi',
@@ -717,7 +716,7 @@
         'mio': {
             kategori: 'Kesenian',
             nama: 'Mio (Musik & Seni)',
-            icon: 'fas fa-music',
+            image: 'placeholder_logo.png',
             deskripsi: 'Mio adalah ekstrakurikuler yang menampung bakat seni siswa, khususnya di bidang musik dan seni pertunjukan. Siswa dapat belajar bermain alat musik, menyanyi, menari, dan berteater. Mio rutin tampil di acara-acara sekolah dan menjadi pengisi acara di berbagai event. Ekstrakurikuler ini juga mempersiapkan siswa untuk mengikuti festival seni dan kompetisi musik.',
             jadwal: 'Jumat, 15:00 - 17:00',
             pembina: 'Guru Seni & Musik',
@@ -738,7 +737,8 @@
         if (!data) return;
 
         // Set header
-        document.getElementById('modalIconLarge').innerHTML = `<i class="${data.icon}"></i>`;
+        const imageUrl = `{{ asset('image') }}/${data.image}`;
+        document.getElementById('modalIconLarge').innerHTML = `<img src="${imageUrl}" style="width:100%; height:100%; object-fit:cover; border-radius:20px;" alt="${data.nama}">`;
         document.getElementById('modalKategori').textContent = data.kategori;
         document.getElementById('modalTitle').textContent = data.nama;
         

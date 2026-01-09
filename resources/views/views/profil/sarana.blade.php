@@ -6,6 +6,12 @@
 <style>
 
 
+    /* --- CONTENT STYLES --- */
+    .sarana-section {
+        padding: 80px 64px;
+        background: #fff;
+    }
+
     /* --- FACILITIES GRID (MATCHING FASILITAS.BLADE.PHP) --- */
     .facilities-grid-4 {
         display: grid;
