@@ -13,7 +13,7 @@
         .info-card {
             background: white;
             border-radius: 20px;
-            /* box-shadow: 0 10px 30px rgba(0,0,0,0.05); */
+            box-shadow: none !important; /* DIRECTIVE: Hapus bayangan */
             padding: 40px;
             margin-bottom: 40px;
             border: 1px solid #f0f0f0;
@@ -68,6 +68,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            table-layout: fixed; /* Fix for overflow */
         }
 
         .table-identitas tr {
@@ -77,6 +78,9 @@
         .table-identitas td {
             padding: 15px;
             font-size: 15px;
+            vertical-align: top; /* Align top for long text */
+            word-wrap: break-word; /* Prevent overflow */
+            overflow-wrap: break-word;
         }
 
         .table-identitas td:first-child {
@@ -101,7 +105,13 @@
             }
 
             .table-identitas td:first-child {
-                width: 40%;
+                width: 35%; /* Adjust width for mobile */
+                font-size: 14px;
+            }
+            
+            .table-identitas td {
+                padding: 10px;
+                font-size: 14px;
             }
         }
     </style>
