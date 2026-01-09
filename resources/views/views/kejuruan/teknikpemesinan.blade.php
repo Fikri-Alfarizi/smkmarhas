@@ -432,6 +432,10 @@
                 max-width: 100%;
             }
 
+            .hero-slider {
+                height: 220px;
+            }
+
             .profile-card {
                 margin-top: 20px;
             }
