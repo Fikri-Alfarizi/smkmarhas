@@ -18,23 +18,7 @@
     }
 
     :root {
-      /* Mengganti Warna Merah LPK menjadi Hijau Sekolah */
-      --primary-color: #15803d;
-      /* Hijau Tua Formal */
-      --hover-color: #14532d;
-      /* Hijau Lebih Tua */
-      --accent-yellow: #facc15;
-      /* Kuning untuk Highlight */
-      --light-gray: #f6f6f6;
-      --text-gray: #767676;
-      --footer-dark: #1E1E1E;
-      --footer-darker: #111111;
-      /* Variasi warna hijau untuk kotak gambar */
-      --green-light: #4ade80;
-      --green-medium: #22c55e;
-      --green-dark: #15803d;
-      --green-darker: #14532d;
-      --green-lightest: #dcfce7;
+      /* Variable definitions removed to use global frontend variables */
     }
 
     .container {
@@ -262,7 +246,7 @@
 
     .nav-line {
       height: 4px;
-      background: linear-gradient(to right, var(--primary-color), #4ade80);
+      background: linear-gradient(to right, var(--primary-color), var(--green-light));
       width: 100%;
     }
 
@@ -560,9 +544,9 @@
 
     /* --- BENEFITS PILL --- */
     .benefits-pill {
-      background: #f0fdf4;
+      background: var(--green-lightest);
       /* Hijau sangat muda */
-      border: 1px solid #dcfce7;
+      border: 1px solid var(--green-lightest);
       border-radius: 42px;
       padding: 40px;
       display: flex;
@@ -603,7 +587,7 @@
 
     .contact-info-box h3 {
       font-size: 20px;
-      color: #166534;
+      color: var(--green-darker);
       margin-bottom: 5px;
       font-weight: 700;
     }
@@ -795,9 +779,9 @@
     }
 
     .bg-light-green {
-      background: #4ade80;
+      background: var(--green-light);
       /* Hijau Muda */
-      color: #064e3b;
+      color: var(--green-darker);
     }
 
     .bg-dark-green {
@@ -1599,12 +1583,12 @@
     /* Mobile Benefits Pill */
     .mobile-benefits {
       display: none;
-      background: #f0fdf4;
+      background: var(--green-lightest);
       border-radius: 20px;
       padding: 20px;
       margin: 0 20px 30px;
       /* Added horizontal margin */
-      border: 1px solid #dcfce7;
+      border: 1px solid var(--green-lightest);
     }
 
     .mobile-benefits-title {
@@ -1612,7 +1596,7 @@
       font-weight: 600;
       margin-bottom: 15px;
       text-align: center;
-      color: #166534;
+      color: var(--green-darker);
     }
 
     .mobile-benefit-list {
@@ -1650,7 +1634,7 @@
 
     .mobile-contact-info h3 {
       font-size: 18px;
-      color: #166534;
+      color: var(--green-darker);
       margin-bottom: 5px;
     }
 
@@ -2365,7 +2349,7 @@
         <div class="mobile-program-text">Siap Kerja</div>
       </div>
     </div>
-    
+
     <!-- Mobile Stats Row - Now below welcome -->
     <div class="mobile-stats-row fade-in" style="display: flex; margin: 20px 0 0 0;">
       <div class="mobile-stat-item">
