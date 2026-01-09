@@ -48,7 +48,7 @@
             width: 100%;
             height: 400px;
             border: 1px solid #ddd;
-            background: #00a651;
+            background: var(--primary-color);
             overflow: hidden;
         }
 
@@ -84,7 +84,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #00a651;
+            background: var(--primary-color);
             color: white;
             font-size: 18px;
             font-weight: 500;
@@ -105,7 +105,7 @@
         }
 
         .slider-btn:hover {
-            background: #00a651;
+            background: var(--primary-color);
             color: white;
         }
 
@@ -195,8 +195,8 @@
         }
 
         .menu-item {
-            background-color: #00c0c0;
-            /* Warna Tosca */
+            background-color: var(--green-light);
+            /* Warna Tosca -> Green Light Theme */
             color: white;
             margin-bottom: 10px;
             display: flex;
@@ -210,7 +210,7 @@
         }
 
         .menu-item:hover {
-            background-color: #008b8b;
+            background-color: var(--green-medium);
         }
 
         .menu-text {
@@ -240,7 +240,7 @@
         }
 
         .menu-item.active {
-            background-color: #008b8b;
+            background-color: var(--green-medium);
         }
 
         .accordion-content {
@@ -248,7 +248,7 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             background: #f9f9f9;
-            border-left: 3px solid #00c0c0;
+            border-left: 3px solid var(--green-light);
         }
 
         .accordion-inner {
@@ -285,7 +285,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #00a651;
+            background: var(--primary-color);
             color: white;
             font-size: 16px;
             font-weight: 500;
@@ -321,13 +321,13 @@
         }
 
         .keunggulan-card:hover {
-            border-color: #00a651;
+            border-color: var(--primary-color);
         }
 
         .keunggulan-icon-box {
             width: 45px;
             height: 45px;
-            background: #00a651;
+            background: var(--primary-color);
             color: white;
             border-radius: 8px;
             display: flex;
@@ -639,7 +639,7 @@
             <!-- SECTION: GALERI KEGIATAN -->
             <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
-                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
+                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid var(--primary-color); padding-left: 12px;">
                         Galeri Kegiatan Teknik Pemesinan
                     </h3>
 
@@ -679,7 +679,7 @@
             <!-- SECTION: KEUNGGULAN JURUSAN -->
             <div class="row-custom" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 30px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
-                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
+                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid var(--primary-color); padding-left: 12px;">
                         Keunggulan Jurusan Teknik Pemesinan
                     </h3>
 
@@ -770,7 +770,7 @@
             <!-- SECTION: AGENDA KEGIATAN TABLE -->
             <div class="row-custom" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px; margin-bottom: 20px;">
                 <div class="col-left" style="max-width: 100%; flex: 0 0 100%;">
-                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid #00a651; padding-left: 12px;">
+                    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; border-left: 4px solid var(--primary-color); padding-left: 12px;">
                         Agenda Kegiatan Teknik Pemesinan
                     </h3>
 
