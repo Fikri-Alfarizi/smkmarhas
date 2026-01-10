@@ -5,7 +5,6 @@
     <span><i class="fas fa-envelope"></i> adm.smkmarhas@gmail.com</span>
   </div>
   <div class="top-social">
-    <!-- Theme Switcher -->
     <div class="theme-switcher">
       <span class="theme-label">Tema:</span>
       <div class="theme-btn theme-btn-green active" data-theme="green" title="Hijau (Default)"></div>
@@ -26,7 +25,6 @@
   </div>
 </header>
 
-<!-- MOBILE TOP BAR -->
 <div class="mobile-top-bar">
   <div class="mobile-help">
     <i class="fas fa-question-circle"></i>
@@ -40,7 +38,9 @@
 
 <nav class="navbar">
   <div class="logo">
-    <img src="{{ asset('image/logo.png') }}" alt="Logo SMK MARHAS">
+    <a href="{{ route('views.beranda') }}">
+      <img src="{{ asset('image/logo.png') }}" alt="Logo SMK MARHAS">
+    </a>
   </div>
   <div class="nav-links">
     <a href="{{ route('views.beranda') }}" class="nav-item">Beranda</a>

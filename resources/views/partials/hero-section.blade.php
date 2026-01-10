@@ -10,6 +10,13 @@
         height: 250px;
         width: 100%;
         background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
     }
 
     .mobile-hero {
@@ -17,12 +24,18 @@
         height: 141px;
         width: 100%;
         overflow: hidden;
+        background-color: var(--primary-color);
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
     }
 
     .mobile-hero img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        display: none;
+        /* Sembunyikan gambar, tampilkan placeholder hijau */
     }
 
     /* --- DESKTOP BREADCRUMB --- */
@@ -192,12 +205,15 @@
 
 <!-- Desktop Hero -->
 <div class="hero-wrapper">
-    <div class="hero-bg" @if(isset($heroImage)) style="background-image: url('{{ $heroImage }}')" @endif></div>
+    <div class="hero-bg" @if(isset($heroImage)) style="background-image: url('{{ $heroImage }}')" @endif>
+        <span>1370 x 250 px</span>
+    </div>
 </div>
 
 <!-- Mobile Hero -->
 <div class="mobile-hero">
     <img src="{{ $heroImageMobile ?? asset('image/12.jpg') }}" alt="Hero Image">
+    <span>860 x 282 px</span>
 </div>
 
 <!-- Desktop Breadcrumb -->

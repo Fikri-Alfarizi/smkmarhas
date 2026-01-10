@@ -5,11 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('title', 'SMK MARHAS Margahayu - Pusat Keunggulan')</title>
+
+  <title>@yield('title', 'SMK MARHAS Margahayu - Pusat Keunggulan SMK di Bandung')</title>
+  <meta name="description"
+    content="@yield('meta_description', 'SMK MARHAS Margahayu adalah Pusat Keunggulan SMK Swasta terbaik di Kabupaten Bandung. Program keahlian: PPLG, TJKT, AKL, MPLB. Pendaftaran siswa baru dibuka!')">
+  <meta name="keywords"
+    content="@yield('meta_keywords', 'SMK Marhas, SMK Margahayu, SMK Swasta Bandung, PPLG, TJKT, AKL, MPLB, Sekolah Kejuruan Bandung, PPDB SMK Bandung')">
+  <meta name="author" content="SMK MARHAS Margahayu">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ url()->current() }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ url()->current() }}">
+  <meta property="og:title" content="@yield('title', 'SMK MARHAS Margahayu - Pusat Keunggulan SMK di Bandung')">
+  <meta property="og:description"
+    content="@yield('meta_description', 'SMK MARHAS Margahayu adalah Pusat Keunggulan SMK Swasta terbaik di Kabupaten Bandung.')">
+  <meta property="og:image" content="@yield('og_image', asset('image/og-smk-marhas.jpg'))">
+  <meta property="og:site_name" content="SMK MARHAS Margahayu">
+  <meta property="og:locale" content="id_ID">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@yield('title', 'SMK MARHAS Margahayu - Pusat Keunggulan SMK di Bandung')">
+  <meta name="twitter:description"
+    content="@yield('meta_description', 'SMK MARHAS Margahayu adalah Pusat Keunggulan SMK Swasta terbaik di Kabupaten Bandung.')">
+  <meta name="twitter:image" content="@yield('og_image', asset('image/og-smk-marhas.jpg'))">
+
+  @include('partials.seo-schema')
+
   <link rel="icon" href="{{ asset('image/favicon.png') }}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="{{ asset('js/security.js') }}" defer></script>
+  <script src="{{ asset('js/console-banner.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  @stack('styles')
   <style>
     /* --- RESET & GLOBAL --- */
     * {
@@ -1483,7 +1512,7 @@
       });
     });
   </script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   @stack('scripts')
 </body>
-
 </html>

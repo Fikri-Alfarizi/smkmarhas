@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage - Highest Priority -->
+    <url>
+        <loc>https://smkmarhas.sch.id/</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Profile Pages -->
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/tentang</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/visi-misi</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/struktur-organisasi</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/fasilitas</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/sarana-prasarana</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/profil/ekstrakurikuler</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Academics / Jurusan - High Intent Pages -->
+    <url>
+        <loc>https://smkmarhas.sch.id/akademik/jurusan</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/akademik/jurusan/pplg</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/akademik/jurusan/tjkt</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/akademik/jurusan/akl</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/akademik/jurusan/mplb</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- PPDB - Very High Intent (Seasonal) -->
+    <url>
+        <loc>https://smkmarhas.sch.id/ppdb</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- BKK / Career Center -->
+    <url>
+        <loc>https://smkmarhas.sch.id/bkk</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/bkk/lowongan</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/bkk/registrasi-alumni</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Gallery -->
+    <url>
+        <loc>https://smkmarhas.sch.id/galeri</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/galeri/foto</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://smkmarhas.sch.id/galeri/video</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Contact -->
+    <url>
+        <loc>https://smkmarhas.sch.id/kontak</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>

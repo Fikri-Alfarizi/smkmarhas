@@ -63,12 +63,13 @@ class SecurityHeadersMiddleware
         // Comprehensive CSP to prevent XSS and data injection attacks
         $csp = [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://widget.tagembed.com https://cloud.tagbox.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget.tagembed.com https://cloud.taggbox.com",
             "img-src 'self' data: blob: https: http:",
-            "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com",
-            "connect-src 'self' https://elfsightcdn.com https://*.elfsight.com",
-            "frame-src 'self' https://www.youtube.com https://www.instagram.com https://www.tiktok.com https://*.elfsight.com",
+            "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cloud.taggbox.com",
+            "connect-src 'self' https://elfsightcdn.com https://*.elfsight.com https://*.tagembed.com https://api.taggbox.com https://*.taggbox.com https://cloud.tagbox.com https://*.tagbox.com",
+            "frame-src 'self' https://www.youtube.com https://www.instagram.com https://www.tiktok.com https://*.elfsight.com https://*.tagembed.com",
+            "media-src 'self' https: http: blob: data:",
             "frame-ancestors 'none'",
             "base-uri 'self'",
             "form-action 'self'",
@@ -79,8 +80,10 @@ class SecurityHeadersMiddleware
         // ==========================================
         // 7. STRICT TRANSPORT SECURITY (HSTS)
         // ==========================================
-        // Forces HTTPS connections (uncomment in production with SSL)
-        // $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+        // Forces HTTPS connections - enabled for production
+        if (!in_array($request->getHost(), ['localhost', '127.0.0.1'])) {
+            $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+        }
 
         // ==========================================
         // 8. REMOVE SERVER INFO

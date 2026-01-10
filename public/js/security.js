@@ -183,6 +183,78 @@
         console.warn('Clickjacking attempt detected!');
     }
 
+    // ==========================================
+    // 6. SAFE URL VALIDATOR
+    // ==========================================
+    window.SafeURL = {
+        /**
+         * Check if URL is safe (no javascript:, data:, vbscript: protocols)
+         */
+        isSafe: function (url) {
+            if (!url || typeof url !== 'string') return false;
+
+            const trimmed = url.trim().toLowerCase();
+            const dangerousProtocols = ['javascript:', 'data:', 'vbscript:', 'file:'];
+
+            for (const protocol of dangerousProtocols) {
+                if (trimmed.startsWith(protocol)) {
+                    console.warn('Blocked dangerous URL protocol:', protocol);
+                    return false;
+                }
+            }
+            return true;
+        },
+
+        /**
+         * Safely set href attribute
+         */
+        setHref: function (element, url) {
+            if (this.isSafe(url)) {
+                element.href = url;
+                return true;
+            }
+            element.removeAttribute('href');
+            return false;
+        }
+    };
+
+    // ==========================================
+    // 7. INPUT SANITIZER
+    // ==========================================
+    window.SafeInput = {
+        /**
+         * Sanitize user input - remove potential XSS vectors
+         */
+        sanitize: function (input) {
+            if (typeof input !== 'string') return '';
+
+            return input
+                .replace(/[<>]/g, '') // Remove angle brackets
+                .replace(/javascript:/gi, '') // Remove javascript: protocol
+                .replace(/on\w+=/gi, '') // Remove event handlers
+                .trim();
+        },
+
+        /**
+         * Validate and sanitize email format
+         */
+        email: function (email) {
+            if (typeof email !== 'string') return '';
+            const sanitized = this.sanitize(email);
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(sanitized) ? sanitized : '';
+        },
+
+        /**
+         * Validate phone number (Indonesian format)
+         */
+        phone: function (phone) {
+            if (typeof phone !== 'string') return '';
+            // Remove non-digit except + at start
+            return phone.replace(/[^\d+]/g, '').slice(0, 15);
+        }
+    };
+
     // Log security initialization
     console.log('🔒 Security utilities initialized');
 

@@ -663,25 +663,31 @@
     };
 
     // Open Modal
+    // SECURITY NOTE: All data in saranaData is hardcoded (trusted source),
+    // not from user input. innerHTML usage below is SAFE.
     function openSaranaModal(saranaId) {
         const data = saranaData[saranaId];
         if (!data) return;
 
-        // Set header (Dynamic Title)
-        document.getElementById('modalIconLarge').innerHTML = `<i class="${data.icon}"></i>`;
+        // Set header - icon class comes from trusted saranaData
+        const iconContainer = document.getElementById('modalIconLarge');
+        iconContainer.innerHTML = ''; // Clear first
+        const iconEl = document.createElement('i');
+        iconEl.className = data.icon;
+        iconContainer.appendChild(iconEl);
+        
+        // Use textContent for plain text (safer)
         document.getElementById('modalTitle').textContent = data.nama;
         
-        // GENERIC CONTENT (Lorem Ipsum)
-        const loremIpsumText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        // GENERIC CONTENT (Lorem Ipsum) - trusted static content
+        const loremIpsumText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
 
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`;
+        // Set deskripsi using textContent (safe for plain text)
+        document.getElementById('modalDeskripsi').textContent = loremIpsumText;
 
-        // Set deskripsi
-        document.getElementById('modalDeskripsi').innerHTML = loremIpsumText;
-
-        // Set spesifikasi list (Generic)
+        // Set spesifikasi list (Generic) - using DOM methods instead of innerHTML
         const specsList = document.getElementById('modalSpecs');
-        specsList.innerHTML = '';
+        specsList.innerHTML = ''; // Clear existing
         const loremSpecs = [
             'Lorem ipsum dolor sit amet',
             'Consectetur adipiscing elit',
@@ -693,24 +699,41 @@
         
         loremSpecs.forEach(spec => {
             const li = document.createElement('li');
-            li.innerHTML = `<i class="fas fa-check-circle"></i> ${spec}`;
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-check-circle';
+            li.appendChild(icon);
+            li.appendChild(document.createTextNode(' ' + spec));
             specsList.appendChild(li);
         });
 
-        // Set kontak (Generic)
+        // Set kontak - using DOM methods for security
         const kontakContainer = document.getElementById('modalKontak');
-        kontakContainer.innerHTML = '';
-        // Using generic contact info or keeping specific if available? 
-        // Request said "satu saja untuk semua", implied fully generic content.
-        kontakContainer.innerHTML += `<a href="#" class="social-link"><i class="fas fa-envelope"></i> email@loremipsum.com</a>`;
-        kontakContainer.innerHTML += `<a href="#" class="social-link"><i class="fas fa-phone"></i> +62 123 4567 890</a>`;
+        kontakContainer.innerHTML = ''; // Clear existing
+        
+        // Create email link safely
+        const emailLink = document.createElement('a');
+        emailLink.href = '#';
+        emailLink.className = 'social-link';
+        emailLink.innerHTML = '<i class="fas fa-envelope"></i> email@loremipsum.com';
+        kontakContainer.appendChild(emailLink);
+        
+        // Create phone link safely  
+        const phoneLink = document.createElement('a');
+        phoneLink.href = '#';
+        phoneLink.className = 'social-link';
+        phoneLink.innerHTML = '<i class="fas fa-phone"></i> +62 123 4567 890';
+        kontakContainer.appendChild(phoneLink);
 
-
-        // Set photo gallery (Generic placeholder count)
+        // Set photo gallery - using DOM methods
         const gallery = document.getElementById('modalGallery');
-        gallery.innerHTML = '';
+        gallery.innerHTML = ''; // Clear existing
         for (let i = 0; i < 6; i++) {
-            gallery.innerHTML += `<div class="photo-item"><i class="fas fa-image"></i></div>`;
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-item';
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-image';
+            photoItem.appendChild(icon);
+            gallery.appendChild(photoItem);
         }
 
         // Show modal

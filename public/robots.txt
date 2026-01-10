@@ -1,2 +1,27 @@
+# SMK MARHAS Margahayu - Robots.txt
+# Website: https://smkmarhas.sch.id
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Allow important directories
+Allow: /image/
+Allow: /js/
+Allow: /css/
+
+# Disallow admin/private areas
+Disallow: /admin/
+Disallow: /filament/
+Disallow: /storage/app/
+Disallow: /api/
+
+# Disallow development/utility files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /vendor/
+
+# Sitemap Location
+Sitemap: https://smkmarhas.sch.id/sitemap.xml
+
+# Crawl-delay (optional, be nice to server)
+Crawl-delay: 1

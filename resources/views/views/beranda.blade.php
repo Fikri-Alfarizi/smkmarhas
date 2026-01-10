@@ -307,7 +307,7 @@
       z-index: 1;
     }
 
-    /* --- ANIMASI SOBEK --- */
+    /* --- ANIMASI SOBEK - DIMATIKAN ---
     .slide::after {
       content: "";
       position: absolute;
@@ -319,6 +319,7 @@
       clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
       z-index: 2;
     }
+    */
 
     /* --- SLIDER NAVIGATION --- */
     .slider-nav {
@@ -1328,6 +1329,9 @@
       overflow: hidden;
       background: var(--primary-color);
       margin-bottom: 0;
+      border-radius: 0;
+      clip-path: none;
+      transform: none;
     }
 
     .mobile-hero-slider .slide {
@@ -2596,11 +2600,14 @@
               <span>@marhasupdate</span>
             </div>
 
-            <div style="flex: 1; background: white;">
-              <script src="https://elfsightcdn.com/platform.js" async></script>
-              <div class="elfsight-app-fb119548-bf6e-4761-bc38-991156fdb61e" data-elfsight-app-lazy></div>
+            <div style="flex: 1; background: white; min-height: 500px;">
+              <!-- Tagembed Instagram Feed -->
+              <div class="tagembed-widget" style="width:100%;height:100%;min-height:500px;overflow:auto;"
+                data-widget-id="313437" data-website="1"></div>
+              <script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
             </div>
           </div>
+
 
           <!-- TikTok Feed -->
           <div class="tiktok-feed-container">
