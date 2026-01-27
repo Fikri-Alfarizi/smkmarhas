@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="{{ asset('css/visimisi.css') }}">
   <link rel="stylesheet" href="{{ asset('css/berita.css') }}">
   <link rel="stylesheet" href="{{ asset('css/ekstrakurikuler.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/ekstrakurikuler-detail.css') }}">  
   <link rel="stylesheet" href="{{ asset('css/fasilitas.css') }}">
   <link rel="stylesheet" href="{{ asset('css/galeri.css') }}">
   <link rel="stylesheet" href="{{ asset('css/infolowongan.css') }}">
@@ -54,6 +55,7 @@
   <link rel="stylesheet" href="{{ asset('css/registrasialumni.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sambutan.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sarana.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sarana-detail.css') }}">
   <link rel="stylesheet" href="{{ asset('css/struktur.css') }}">
   <link rel="stylesheet" href="{{ asset('css/teknikpemesinan.css') }}">
   <link rel="stylesheet" href="{{ asset('css/hero-section.css') }}">
@@ -101,6 +103,7 @@
 
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/ekstrakurikuler.js') }}" defer></script>
+  <script src="{{ asset('js/ekstrakurikuler-detail.js') }}" defer></script>  
   <script src="{{ asset('js/fasilitas.js') }}" defer></script>
   <script src="{{ asset('js/galeri.js') }}" defer></script>
   <script src="{{ asset('js/infolowongan.js') }}" defer></script>
@@ -108,6 +111,7 @@
   <script src="{{ asset('js/profilsekolah.js') }}" defer></script>
   <script src="{{ asset('js/sambutan.js') }}" defer></script>
   <script src="{{ asset('js/sarana.js') }}" defer></script>
+  <script src="{{ asset('js/sarana-detail.js') }}" defer></script>
   <script src="{{ asset('js/teknikpemesinan.js') }}" defer></script>
   <script src="{{ asset('js/visimisi.js') }}" defer></script>
   <script src="{{ asset('js/news.js') }}" defer></script>
