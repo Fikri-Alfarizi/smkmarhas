@@ -32,7 +32,7 @@
 
   @include('partials.seo-schema')
 
-  <link rel="icon" href="{{ asset('image/favicon.png') }}" type="image/x-icon">
+  <link rel="icon" href="{{ asset('image/favicon.svg') }}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="{{ asset('js/security.js') }}" defer></script>
@@ -69,7 +69,7 @@
 <body>
   <div id="preloader">
     <div class="preloader-content">
-      <img src="{{ asset('image/favicon.png') }}" alt="Loading..." class="preloader-logo">
+      <img src="{{ asset('image/favicon.svg') }}" alt="Loading..." class="preloader-logo">
       <div class="loading-dots">
         <div class="dot"></div>
         <div class="dot"></div>
