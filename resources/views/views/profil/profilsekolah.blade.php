@@ -3,118 +3,6 @@
 @section('title', 'Profil Sekolah - SMK MARHAS Margahayu')
 
 @section('content')
-    <style>
-        /* --- CONTENT STYLES --- */
-        .profile-section {
-            padding: 80px 64px;
-            background: #fff;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: none !important; /* DIRECTIVE: Hapus bayangan */
-            padding: 40px;
-            margin-bottom: 40px;
-            border: 1px solid #f0f0f0;
-        }
-
-        .section-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--green-lightest);
-            color: var(--primary-color);
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .content-text {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #555;
-            text-align: justify;
-        }
-
-        .history-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .image-box {
-            background: var(--primary-color);
-            border-radius: 0;
-            /* No radius - square box */
-            height: 400px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            line-height: 1.5;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* --- IDENTITAS TABLE --- */
-        .table-identitas {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            table-layout: fixed; /* Fix for overflow */
-        }
-
-        .table-identitas tr {
-            border-bottom: 1px solid #eee;
-        }
-
-        .table-identitas td {
-            padding: 15px;
-            font-size: 15px;
-            vertical-align: top; /* Align top for long text */
-            word-wrap: break-word; /* Prevent overflow */
-            overflow-wrap: break-word;
-        }
-
-        .table-identitas td:first-child {
-            font-weight: 700;
-            color: #333;
-            width: 30%;
-            background: #f9fafb;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 900px) {
-            .profile-section {
-                padding: 40px 20px;
-            }
-
-            .history-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .image-box {
-                height: 250px;
-            }
-
-            .table-identitas td:first-child {
-                width: 35%; /* Adjust width for mobile */
-                font-size: 14px;
-            }
-            
-            .table-identitas td {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-    </style>
 
     @include('partials.hero-section', [
         'heroImage' => asset('image/logoss.png'),
@@ -129,16 +17,19 @@
     <section class="profile-section">
         <div class="history-grid">
 
-                               <div class="image-box fade-in">
+            <div class="image-box fade-in desktop-only">
                 <i class="fas fa-image" style="font-size: 48px; margin-bottom: 10px; opacity: 0.7;"></i>
-
-
-                               <span>Upload Gambar</span>
-                <span style="opacity: 0.7;">826 x 600 px</span>
+                <span>Upload Gambar</span>
+                <span style="opacity: 0.7;">631 x 400 px</span>
             </div>
 
+            <div class="mobile-image-box fade-in mobile-only">
+                <i class="fas fa-image" style="font-size: 36px; margin-bottom: 8px; opacity: 0.7;"></i>
+                <span>Upload Gambar</span>
+                <span style="opacity: 0.7;">400x250px</span>
+            </div>
 
-                           <div class="fade-in fade-in-delay-1">
+            <div class="fade-in fade-in-delay-1">
                 <span class="section-badge">SEJARAH SINGKAT</span>
                 <h2 style="font-size: 32px; color: #1f2937; margin-bottom: 20px;">Membangun Masa Depan <br><span class="text-primary">Sejak 20 Tahun Lalu</span></h2>
                 <p class="content-text">
@@ -190,20 +81,3 @@
     </section>
 
 @endsection
-
-@push('scripts')
-    <script>
-        // Pastikan animasi fade-in tetap berjalan di halaman ini
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-@endpush

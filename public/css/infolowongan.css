@@ -1,1 +1,205 @@
-/* infolowongan.css */
+.page-wrapper {
+    padding: 50px 0;
+    background: #f8fafc;
+    min-height: 80vh;
+}
+
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.page-header p { 
+    color: #64748b; 
+}
+
+.loker-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.sidebar-category {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-btn {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.category-btn:hover {
+    background: #f1f5f9;
+    color: var(--primary-color);
+}
+
+.category-btn.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.count-badge {
+    background: #f1f5f9;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 50px;
+    color: #94a3b8;
+}
+
+.category-btn.active .count-badge {
+    background: white;
+    color: #166534;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.loker-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loker-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.loker-main { 
+    flex: 1; 
+}
+
+.company {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.job-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+    flex-wrap: wrap;
+}
+
+.meta-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+}
+
+.btn-detail {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.btn-detail:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .loker-layout { 
+        grid-template-columns: 1fr; 
+    }
+    .sidebar-category { 
+        margin-bottom: 20px; 
+        position: static; 
+    }
+    .loker-card { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 20px; 
+    }
+    .btn-detail { 
+        margin-left: 0; 
+        width: 100%; 
+        text-align: center; 
+    }
+}

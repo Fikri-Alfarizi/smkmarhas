@@ -80,8 +80,8 @@
         <a href="{{ route('bkk.lowongan') }}" class="dropdown-item">Informasi Lowongan Kerja</a>
       </div>
     </div>
-    <a href="https://spmb.smkmarhas.sch.id" class="nav-item highlight">SPMB</a>
     <a href="{{ route('views.kontak') }}" class="nav-item">Kontak</a>
+    <a href="https://spmb.smkmarhas.sch.id" class="nav-item highlight">SPMB</a>
   </div>
   <div class="mobile-menu-toggle">
     <i class="fas fa-bars"></i>
@@ -97,7 +97,6 @@
     </div>
   </div>
   <div class="mobile-nav-links">
-    <!-- Mobile Theme Switcher -->
     <div style="padding: 10px; margin-bottom: 10px; border-bottom: 1px solid #eee;">
       <span style="font-size: 12px; color: #666; margin-bottom: 8px; display: block;">Pilih Tema Warna:</span>
       <div class="theme-switcher" style="justify-content: flex-start;">
@@ -161,8 +160,9 @@
       </div>
     </div>
 
+    <a href="{{ route('views.kontak') }}" class="mobile-nav-item">Kontak</a>
+
     <a href="https://spmb.smkmarhas.sch.id" class="mobile-nav-item highlight"
       style="color: var(--primary-color);">SPMB</a>
-    <a href="{{ route('views.kontak') }}" class="mobile-nav-item">Kontak</a>
   </div>
 </div>

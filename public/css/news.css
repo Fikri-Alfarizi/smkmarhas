@@ -1,0 +1,280 @@
+.ticker-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.ticker-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.ticker-section::before,
+.ticker-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.ticker-section::before {
+    left: 0;
+    background: linear-gradient(to right, #f9f9f9, transparent);
+}
+
+.ticker-section::after {
+    right: 0;
+    background: linear-gradient(to left, #f9f9f9, transparent);
+}
+
+.ticker-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll-cards 40s linear infinite;
+    width: max-content;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.ticker-section:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-cards {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.ticker-item {
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticker-thumb-box {
+    position: relative;
+    background: #16a34a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticker-item:hover .ticker-thumb-box {
+    transform: scale(1.02);
+}
+
+.ticker-thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ticker-placeholder-text {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.ticker-date-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #f59e0b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}
+
+.ticker-content-below {
+    padding: 15px 5px 0 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticker-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ticker-meta {
+    font-size: 12px;
+    color: #16a34a;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.ticker-meta-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.ticker-meta-row i {
+    margin-top: 3px;
+}
+
+.ticker-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ticker-header h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.mobile-agenda-section {
+    display: none;
+    padding: 30px 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.mobile-agenda-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mobile-agenda-header h2 {
+    font-size: 24px;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.mobile-agenda-header p {
+    color: #767676;
+    font-size: 14px;
+}
+
+.mobile-agenda-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mobile-agenda-item {
+    display: flex;
+    gap: 15px;
+}
+
+.mobile-agenda-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.mobile-agenda-date .day {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.mobile-agenda-date .month {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.mobile-agenda-date .year {
+    font-size: 10px;
+    color: #999;
+}
+
+.mobile-agenda-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    flex: 1;
+}
+
+.mobile-agenda-details {
+    padding: 15px;
+}
+
+.mobile-agenda-details h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.mobile-agenda-meta {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mobile-agenda-meta i {
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .desktop-only-ticker {
+        display: block !important;
+        padding: 30px 0;
+    }
+
+    .mobile-only-ticker {
+        display: none !important;
+    }
+
+    .ticker-item {
+        width: 280px;
+    }
+
+    .ticker-thumb-box {
+        height: 140px;
+    }
+
+    .ticker-section::before,
+    .ticker-section::after {
+        width: 30px;
+    }
+}

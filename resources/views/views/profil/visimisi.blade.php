@@ -11,9 +11,9 @@
         ],
         'heading' => '<span class="highlight">SMK MARHAS Margahayu</span> Visi & Misi'
     ])
+
 <section class="visimisi-container">
     <div class="visimisi-grid">
-        <!-- VISI - Left Side -->
         <div class="visi-card fade-in">
             <span class="section-label">OUR VISION</span>
             <h2>VISI</h2>
@@ -22,7 +22,6 @@
             </p>
         </div>
 
-        <!-- MISI - Right Side -->
         <div class="fade-in">
             <span class="section-label">OUR MISSION</span>
             <h2 style="font-size: 36px; color: var(--primary-color); margin-bottom: 20px; font-weight: 800;">MISI</h2>
@@ -57,19 +56,3 @@
     </div>
 </section>
 @endsection
-
-@push('scripts')
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
-</script>
-@endpush

@@ -63,12 +63,12 @@ class SecurityHeadersMiddleware
         // Comprehensive CSP to prevent XSS and data injection attacks
         $csp = [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://widget.tagembed.com https://cloud.tagbox.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget.tagembed.com https://cloud.taggbox.com",
-            "img-src 'self' data: blob: https: http:",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://widget.tagembed.com https://cloud.tagbox.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://maps.googleapis.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget.tagembed.com https://cloud.taggbox.com https://maps.googleapis.com",
+            "img-src 'self' data: blob: https: http: https://maps.googleapis.com https://maps.gstatic.com",
             "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cloud.taggbox.com",
-            "connect-src 'self' https://elfsightcdn.com https://*.elfsight.com https://*.tagembed.com https://api.taggbox.com https://*.taggbox.com https://cloud.tagbox.com https://*.tagbox.com",
-            "frame-src 'self' https://www.youtube.com https://www.instagram.com https://www.tiktok.com https://*.elfsight.com https://*.tagembed.com",
+            "connect-src 'self' https://elfsightcdn.com https://*.elfsight.com https://*.tagembed.com https://api.taggbox.com https://*.taggbox.com https://cloud.tagbox.com https://*.tagbox.com https://maps.googleapis.com",
+            "frame-src 'self' https://www.youtube.com https://www.instagram.com https://www.tiktok.com https://*.elfsight.com https://*.tagembed.com https://www.google.com https://maps.google.com https://maps.googleapis.com",
             "media-src 'self' https: http: blob: data:",
             "frame-ancestors 'none'",
             "base-uri 'self'",

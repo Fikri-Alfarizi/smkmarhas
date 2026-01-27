@@ -1,1 +1,360 @@
-/* sarana.css - Stylesheet for sarana.css */
+.sarana-section {
+    padding: 80px 64px;
+    background: #fff;
+}
+
+.facilities-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.facility-box {
+    background: #ffffff;
+    border: 1px solid #eef2f3;
+    padding: 30px 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    aspect-ratio: 269 / 199;
+    min-height: 199px;
+    width: 100%;
+}
+
+.facility-box::before {
+    content: 'Lihat Detail';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: rgba(21, 128, 61, 0.95);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    transition: bottom 0.3s ease;
+    z-index: 1;
+}
+
+.facility-box:hover::before {
+    bottom: 0;
+}
+
+.facility-box:hover {
+    transform: translateY(-10px);
+}
+
+.facility-box i {
+    font-size: 35px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.facility-box h4 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.facility-box p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.sarana-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sarana-modal.active {
+    display: flex;
+}
+
+.modal-content-sarana {
+    background: white;
+    border-radius: 25px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close-sarana {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-sarana:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-header-sarana {
+    background: linear-gradient(135deg, var(--primary-color), #16a34a);
+    padding: 50px 40px 40px;
+    text-align: center;
+    color: white;
+    border-radius: 25px 25px 0 0;
+}
+
+.modal-header-sarana .sarana-icon-large {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 45px;
+    color: white;
+}
+
+.modal-header-sarana h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.modal-body-sarana {
+    padding: 40px;
+}
+
+.modal-section {
+    margin-bottom: 35px;
+}
+
+.modal-section h3 {
+    font-size: 22px;
+    color: #1f2937;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-section h3 i {
+    color: var(--primary-color);
+}
+
+.modal-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    font-size: 20px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photo-item {
+    aspect-ratio: 1;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 40px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #555;
+}
+
+.info-list li i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+@media (max-width: 900px) {
+    .modal-content-sarana {
+        max-height: 95vh;
+    }
+
+    .modal-header-sarana {
+        padding: 40px 25px 30px;
+    }
+
+    .modal-header-sarana .sarana-icon-large {
+        width: 80px;
+        height: 80px;
+        font-size: 35px;
+    }
+
+    .modal-header-sarana h2 {
+        font-size: 24px;
+    }
+
+    .modal-body-sarana {
+        padding: 25px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+
+    .social-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.sarana-card i {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.sarana-card h3 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    font-weight: 700;
+}
+
+.sarana-card p {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .sarana-section {
+        padding: 40px 20px;
+    }
+
+    .facilities-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .facility-box {
+        padding: 25px 15px;
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100%;
+    }
+
+    .facility-box i {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .facility-box h4 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .facility-box p {
+        display: none;
+    }
+}

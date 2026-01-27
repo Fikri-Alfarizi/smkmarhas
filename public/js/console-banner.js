@@ -1,132 +1,86 @@
-/*
- * Console Banner for SMK MARHAS MARGAHAYU
- */
 (function () {
-    // --- SPAM FILTER ---
-    // We override console methods to filter out known garbage logs from extensions or third-party scripts
-    const originalLog = console.log;
-    const originalError = console.error;
-    const originalWarn = console.warn;
+    window.addEventListener('load', function () {
+        const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    function shouldFilter(args) {
-        if (!args || args.length === 0) return false;
-        const text = args.map(a => {
-            if (typeof a === 'string') return a;
-            if (a && typeof a === 'object') {
-                try {
-                    return JSON.stringify(a);
-                } catch (e) {
-                    return String(a);
-                }
-            }
-            return String(a);
-        }).join(' ');
+        const theme = {
+            bgTitle: isDarkMode ? '#004d26' : '#e8f5e9',
+            textTitle: isDarkMode ? '#4ade80' : '#00a651',
+            bgWarning: isDarkMode ? '#3f0000' : '#fff5f5',
+            textWarning: isDarkMode ? '#ff6b6b' : '#dc3545',
+            textBody: isDarkMode ? '#e5e5e5' : '#333333',
+            textMuted: isDarkMode ? '#888888' : '#666666',
+            border: isDarkMode ? '#333' : '#ddd'
+        };
 
-        // Filter patterns based on user report
-        const filters = [
-            'sdjfklksdjdskjfj',
-            'tb_cst_image',
-            'sdlkfksdjflksdlkjklsdfj',
-            '<path> attribute d: Expected number',
-            'translateContent.js'
-        ];
-        return filters.some(f => text.includes(f));
-    }
+        const styles = {
+            title: [
+                `font-size: 40px`,
+                `font-weight: 900`,
+                `color: ${theme.textTitle}`,
+                `background: ${theme.bgTitle}`,
+                `padding: 10px 20px`,
+                `border-radius: 8px`,
+                `text-shadow: ${isDarkMode ? '0 0 10px rgba(74, 222, 128, 0.5)' : 'none'}`,
+                `border: 1px solid ${theme.textTitle}`
+            ].join(';'),
 
-    console.log = function (...args) {
-        if (shouldFilter(args)) return;
-        originalLog.apply(console, args);
-    };
+            warningHeader: [
+                `font-size: 28px`,
+                `color: ${theme.textWarning}`,
+                `background: ${theme.bgWarning}`,
+                `padding: 5px 10px`,
+                `border-radius: 5px`,
+                `font-weight: bold`,
+                `margin-top: 15px`
+            ].join(';'),
 
-    console.error = function (...args) {
-        if (shouldFilter(args)) return;
-        originalError.apply(console, args);
-    };
+            warningBody: [
+                `font-size: 14px`,
+                `color: ${theme.textBody}`,
+                `line-height: 1.6`,
+                `font-family: monospace`
+            ].join(';'),
 
-    console.warn = function (...args) {
-        if (shouldFilter(args)) return;
-        originalWarn.apply(console, args);
-    };
+            infoTitle: [
+                `color: ${theme.textTitle}`,
+                `font-weight: bold`,
+                `font-size: 14px`,
+                `margin-top: 15px`,
+                `padding-bottom: 5px`,
+                `border-bottom: 2px solid ${theme.textTitle}`
+            ].join(';'),
 
-    // --- BANNER CONTENT ---
-    const title = "SMK MARHAS MARGAHAYU";
-    const warningTitle = "STOP!";
-    const warningText = "This feature is intended for developers. If someone told you to copy-paste something here to enable a feature or hack someone's account, it is a scam and will give them access to your account.";
+            signature: [
+                `font-size: 11px`,
+                `color: ${theme.textMuted}`,
+                `margin-top: 20px`,
+                `padding-top: 10px`,
+                `border-top: 1px dashed ${theme.border}`
+            ].join(';')
+        };
 
-    // Use absolute path to ensure it resolves correctly in all contexts
-    const logoUrl = window.location.origin + '/image/logo.png';
+        setTimeout(console.clear.bind(console), 0);
 
-    const styleTitle = [
-        'font-family: system-ui, -apple-system, sans-serif',
-        'font-size: 40px',
-        'font-weight: 800',
-        'color: #1e3a8a',
-        'text-shadow: 2px 2px 0px #bfdbfe',
-        'margin-bottom: 20px',
-        'display: block'
-    ].join(';');
+        setTimeout(() => {
+            console.log('%cSMK MARHAS MARGAHAYU', styles.title);
 
-    const styleWarningTitle = [
-        'color: #ef4444',
-        'font-family: system-ui, -apple-system, sans-serif',
-        'font-size: 50px',
-        'font-weight: 900',
-        '-webkit-text-stroke: 1px black',
-        'margin-top: 20px',
-        'display: block'
-    ].join(';');
+            console.log('%c⚠️ STOP! / PERINGATAN KEAMANAN', styles.warningHeader);
 
-    const styleWarningText = [
-        'font-family: system-ui, -apple-system, sans-serif',
-        'font-size: 16px',
-        'color: #1f2937',
-        'background-color: #fee2e2',
-        'padding: 10px',
-        'border-radius: 5px',
-        'margin-bottom: 20px',
-        'display: block'
-    ].join(';');
+            console.log(
+                `%cFitur browser ini dikhususkan untuk developer.\n` +
+                `Jika ada orang yang meminta Anda menyalin-tempel sesuatu di sini dengan iming-iming fitur tersembunyi atau hadiah, itu adalah penipuan (Self-XSS Attack).\n\n` +
+                `⛔ Sistem kami mendeteksi percobaan akses script eksternal.\n` +
+                `🔒 Untuk alasan keamanan, harap ketik "allow pasting" jika Anda benar-benar developer (Chrome Feature).`,
+                styles.warningBody
+            );
 
+            console.group(`%c🚀 Info Development`, styles.infoTitle);
+            console.log(`%cBuild Version : v3.0.1 (Stable)`, `color: ${theme.textBody}`);
+            console.log(`%cEnvironment   : Production`, `color: ${theme.textBody}`);
+            console.log(`%cTheme Mode    : ${isDarkMode ? 'Dark 🌙' : 'Light ☀️'}`, `color: ${theme.textBody}`);
+            console.groupEnd();
 
-    function printBanner() {
-        try {
-            console.clear();
-        } catch (e) { }
-
-        // Logo with improved dimensions and ensuring it's on a new line
-        // Some browsers need a string with content to render the background image
-        // We use %c with a space and styling
-        const styleLogo = [
-            'font-size: 1px',
-            'padding: 80px',
-            'line-height: 160px',
-            'background-image: url(' + logoUrl + ')',
-            'background-size: contain',
-            'background-repeat: no-repeat',
-            'background-position: center',
-            'color: transparent',
-            'display: inline-block',
-            'border-radius: 10px'
-        ].join(';');
-
-        // Use originalLog to bypass our filter for internal use
-        originalLog.call(console, '%c ', styleLogo);
-
-        originalLog.call(console, `%c${title}`, styleTitle);
-        originalLog.call(console, `%c${warningTitle}`, styleWarningTitle);
-        originalLog.call(console, `%c${warningText}`, styleWarningText);
-
-        originalLog.call(console, '%cDeveloped by SMK Marhas Team', 'font-style: italic; color: #6b7280; font-size: 12px; margin-top: 10px;');
-    }
-
-    // Run when ready
-    if (document.readyState === 'complete') {
-        setTimeout(printBanner, 1000);
-    } else {
-        window.addEventListener('load', function () {
-            setTimeout(printBanner, 1000);
-        });
-    }
-
-    // Also run immediately to catch early logs if possible
+            console.log('%cCode with ❤️ by Siswa PPLG SMK MARHAS | © 2026', styles.signature);
+        }, 100);
+    });
 })();
